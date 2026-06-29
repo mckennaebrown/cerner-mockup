@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cardiac Rehabilitation Admission</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Form navigation">
+      <button class="nav-item active" data-target="referral-intake">CR Referral / Booking</button>
+      <button class="nav-item" data-target="intake-demographics">CR Intake Profile</button>
+      <button class="nav-item" data-target="language-communication">Language &amp; Communication</button>
+      <button class="nav-item" data-target="sex-gender-identity-communication">Sex, Gender &amp; Identity-Related Communication</button>
+      <button class="nav-item" data-target="race-ethnicity-indigenous">Race, Ethnicity &amp; Indigenous Identity</button>
+      <button class="nav-item" data-target="geography-transportation-digital">Geography, Transportation &amp; Digital Access</button>
+      <button class="nav-item" data-target="socioeconomic-support">Socioeconomic Needs and Additional Support</button>
+      <button class="nav-item" data-target="disability-accessibility">Disability and Accessibility</button>
+      <button class="nav-item" data-target="allergies">Allergies</button>
+      <button class="nav-item" data-target="medications">Medication List</button>
+      <button class="nav-item" data-target="pharmacy">Community Pharmacy</button>
+      <button class="nav-item" data-target="history">History</button>
+      <button class="nav-item" data-target="exercise">Exercise</button>
+      <button class="nav-item" data-target="phq4-screening">PHQ4 Screening Tool</button>
+      <button class="nav-item" data-target="morse-falls-risk">Falls Risk Assessment - Morse Scale</button>
+      <button class="nav-item" data-target="smoking-assessment">Smoking Assessment/Cessation</button>
+    </aside>
+
+    <main class="workspace">
+      <header class="site-title">Cardiac Rehabilitation Admission</header>
+
+      <div class="topbar">
+        <span>*Performed on:</span>
+        <input type="date" value="2026-06-03" />
+        <input type="time" value="21:42" />
+        <span>EDT</span>
+        <button class="mini-button">Save</button>
+      </div>
+
+
+
+      <section class="screen" id="sex-gender-identity-communication">
+        <header class="section-title">Sex, Gender, and Identity-Related Communication</header>
+
+        <div class="cr-panel identity-panel">
+          <div class="cr-panel-title">Identity-Related Communication</div>
+          <div class="identity-form-row">
+            <label>Preferred Name</label>
+            <input class="wide-input" placeholder="Free text">
+          </div>
+          <div class="identity-question-row">
+            <label>Personal Pronouns<br><small>Check all that apply.</small></label>
+            <div class="identity-checkbox-grid compact-identity-grid">
+              <label><input type="checkbox" name="personal-pronouns" value="she-her-hers"> she/her/hers</label>
+              <label><input type="checkbox" name="personal-pronouns" value="he-him-his"> he/him/his</label>
+              <label><input type="checkbox" name="personal-pronouns" value="they-them-theirs"> they/them/theirs</label>
+              <label><input type="checkbox" name="personal-pronouns" value="prefer-not-to-answer"> Prefer not to answer</label>
+              <label><input type="checkbox" name="personal-pronouns" value="another"> Another</label>
+            </div>
+          </div>
+          <div class="identity-form-row conditional-field" data-conditional-group="personal-pronouns" data-conditional-values="another" hidden>
+            <label>Another Personal Pronoun<br><small>Please specify</small></label>
+            <input class="wide-input" placeholder="Free text">
+          </div>
+        </div>
+
+        <div class="cr-panel identity-panel">
+          <div class="cr-panel-title">Gender Identity</div>
+          <div class="identity-question-row">
+            <label>Gender Identity<br><small>Check all that apply.</small></label>
+            <div class="identity-checkbox-grid">
+              <label><input type="checkbox" name="gender-identity" value="genderfluid-genderqueer"> Genderfluid or genderqueer</label>
+              <label><input type="checkbox" name="gender-identity" value="man"> Man</label>
+              <label><input type="checkbox" name="gender-identity" value="nonbinary"> Nonbinary</label>
+              <label><input type="checkbox" name="gender-identity" value="two-spirit"> Two-Spirit*</label>
+              <label><input type="checkbox" name="gender-identity" value="woman"> Woman</label>
+              <label><input type="checkbox" name="gender-identity" value="questioning-unsure"> Questioning or unsure</label>
+              <label><input type="checkbox" name="gender-identity" value="another"> Another gender identity</label>
+              <label><input type="checkbox" name="gender-identity" value="do-not-know"> Do not know</label>
+              <label><input type="checkbox" name="gender-identity" value="prefer-not-to-answer"> Prefer not to answer</label>
+            </div>
+          </div>
+          <div class="identity-form-row conditional-field" data-conditional-group="gender-identity" data-conditional-values="another" hidden>
+            <label>Another Gender Identity<br><small>Please specify</small></label>
+            <input class="wide-input" placeholder="Free text">
+          </div>
+        </div>
+
+        <div class="cr-panel identity-panel">
+          <div class="cr-panel-title">Transgender Identity</div>
+          <div class="identity-question-row">
+            <label>Do you identify as transgender?</label>
+            <div class="identity-checkbox-grid compact-identity-grid">
+              <label><input type="radio" name="transgender-identity" value="yes"> Yes</label>
+              <label><input type="radio" name="transgender-identity" value="no"> No</label>
+              <label><input type="radio" name="transgender-identity" value="do-not-know"> Do not know</label>
+              <label><input type="radio" name="transgender-identity" value="prefer-not-to-answer"> Prefer not to answer</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="cr-panel streamlined-action-panel">
+          <div class="cr-panel-title">Communication Considerations / Actions</div>
+          <div class="action-form-row">
+            <label>Communication Considerations / Actions<br><small>Optional — document relevant name/pronoun use, privacy considerations, or follow-up.</small></label>
+            <textarea class="wide-textarea streamlined-action-textarea" placeholder="Free text"></textarea>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="screen" id="race-ethnicity-indigenous">
+        <header class="section-title">Race, Ethnicity, and Indigenous Identity</header>
+
+        <div class="data-collection-statement"><strong>Why these questions are asked:</strong> The following questions are optional. They are asked to help the Cardiac Rehabilitation Program understand who is accessing services and identify potential inequities in access, participation, and outcomes. Responses will not affect the care provided, and participants may decline to answer any question.</div>
+
+
+        <div class="cr-panel indigenous-panel">
+          <div class="cr-panel-title">Indigenous Identity</div>
+          <div class="conditional-hint">Select one or more Indigenous identities where applicable. “No,” “Do not know,” and “Prefer not to answer” are mutually exclusive.</div>
+
+          <div class="race-question-row indigenous-question-row">
+            <label>Do you identify as First Nations, Inuk/Inuit and/or Métis?</label>
+            <div class="indigenous-checkbox-grid">
+              <label><input type="checkbox" name="indigenous-identity" value="first-nations" data-indigenous-positive> Yes, First Nations</label>
+              <label><input type="checkbox" name="indigenous-identity" value="inuk-inuit" data-indigenous-positive> Yes, Inuk/Inuit</label>
+              <label><input type="checkbox" name="indigenous-identity" value="metis" data-indigenous-positive> Yes, Métis</label>
+              <label><input type="checkbox" name="indigenous-identity" value="no" data-indigenous-exclusive> No</label>
+              <label><input type="checkbox" name="indigenous-identity" value="do-not-know" data-indigenous-exclusive> Do not know</label>
+              <label><input type="checkbox" name="indigenous-identity" value="prefer-not-to-answer" data-indigenous-exclusive> Prefer not to answer</label>
+            </div>
+          </div>
+
+          <div class="form-row language-row">
+            <label>Cultural, Spiritual, or Identity-Related Considerations<br><small>Optional</small></label>
+            <textarea class="wide-textarea" placeholder="Are there any cultural, spiritual, or identity-related considerations you would like the cardiac rehabilitation team to know about?"></textarea>
+          </div>
+        </div>
+
+        <div class="cr-panel race-panel">
+          <div class="cr-panel-title">Race</div>
+
+          <div class="race-question-row">
+            <label>Which of the following best describes your racialized group?<br><small>Check all that apply.</small></label>
+            <div class="race-checkbox-grid race-example-grid">
+              <label><input type="checkbox" name="race-group"> <span class="race-label">Black</span><span class="race-example">e.g., African, African Canadian, Afro-Caribbean descent</span></label>
+              <label><input type="checkbox" name="race-group"> <span class="race-label">East Asian</span><span class="race-example">e.g., Chinese, Japanese, Korean, Taiwanese descent</span></label>
+              <label><input type="checkbox" name="race-group"> <span class="race-label">Latin American</span><span class="race-example">e.g., Hispanic or Latin American descent</span></label>
+              <label><input type="checkbox" name="race-group"> <span class="race-label">Middle Eastern</span><span class="race-example">e.g., Arab, Persian, West Asian descent; Afghan, Egyptian, Iranian, Kurdish, Lebanese, Turkish</span></label>
+              <label><input type="checkbox" name="race-group"> <span class="race-label">South Asian</span><span class="race-example">e.g., Bangladeshi, Indian, Indo-Caribbean, Pakistani, Sri Lankan descent</span></label>
+              <label><input type="checkbox" name="race-group"> <span class="race-label">Southeast Asian</span><span class="race-example">e.g., Cambodian, Filipino, Indonesian, Thai, Vietnamese, or other Southeast Asian descent</span></label>
+              <label><input type="checkbox" name="race-group"> <span class="race-label">White</span><span class="race-example">e.g., European descent</span></label>
+              <label class="race-other-option"><input type="checkbox" name="race-group" value="another"> <span class="race-label">Another race group</span><span class="race-example">Includes values not described above; please specify below</span></label>
+              <label><input type="checkbox" name="race-group"> <span class="race-label">Do not know</span><span class="race-example">Patient does not know or is unsure</span></label>
+              <label><input type="checkbox" name="race-group"> <span class="race-label">Prefer not to answer</span><span class="race-example">Patient chooses not to answer</span></label>
+            </div>
+          </div>
+
+          <div class="form-row language-row conditional-field" data-conditional-group="race-group" data-conditional-values="another" hidden>
+            <label>Another Race Group<br><small>Please specify</small></label>
+            <input class="wide-input" placeholder="Free text">
+          </div>
+        </div>
+
+
+        <div class="cr-panel ethnicity-panel">
+          <div class="cr-panel-title">Ethnicity</div>
+
+          <div class="race-question-row ethnicity-question-row">
+            <label>What is your ethnic or cultural origin(s)?<br><small>Specify as many ethnic or cultural origin(s) as applicable.</small></label>
+            <div class="ethnicity-fields">
+              <div class="form-row language-row">
+                <label>Origins Referring to Countries<br><small>Add as many as applicable</small></label>
+                <div class="multi-select-control" data-multi-select>
+                  <input class="wide-input" list="country-origin-options" placeholder="Search and add a country origin">
+                  <button type="button" class="add-selection-button">Add</button>
+                  <div class="selected-values" aria-live="polite"></div>
+                </div>
+                <span class="field-note">search / multi-select</span>
+              </div>
+
+              <div class="form-row language-row">
+                <label>Other Ethnic or Cultural Origins<br><small>Add as many as applicable</small></label>
+                <div class="multi-select-control" data-multi-select>
+                  <input class="wide-input" list="other-origin-options" placeholder="Search and add an ethnic or cultural origin">
+                  <button type="button" class="add-selection-button">Add</button>
+                  <div class="selected-values" aria-live="polite"></div>
+                </div>
+                <span class="field-note">search / multi-select</span>
+              </div>
+
+              <div class="form-row language-row">
+                <label>Another Ethnic or Cultural Origin<br><small>Please specify</small></label>
+                <input class="wide-input" placeholder="Open text">
+                <span class="field-note">free-text</span>
+              </div>
+
+              <div class="option-row ethnicity-option-row">
+                <label>Response Options</label>
+                <label><input type="checkbox" name="ethnicity-response"> Do not know</label>
+                <label><input type="checkbox" name="ethnicity-response"> Prefer not to answer</label>
+              </div>
+            </div>
+          </div>
+
+        <datalist id="country-origin-options">
+          <option value="Afghan"></option>
+          <option value="Albanian"></option>
+          <option value="Algerian"></option>
+          <option value="American"></option>
+          <option value="Angolan"></option>
+          <option value="Anguillan"></option>
+          <option value="Antiguan"></option>
+          <option value="Argentinian"></option>
+          <option value="Armenian"></option>
+          <option value="Aruban"></option>
+          <option value="Australian"></option>
+          <option value="Austrian"></option>
+          <option value="Azerbaijani"></option>
+          <option value="Azorean"></option>
+          <option value="Bahamian"></option>
+          <option value="Bahraini"></option>
+          <option value="Bangladeshi"></option>
+          <option value="Barbadian"></option>
+          <option value="Belgian"></option>
+          <option value="Belizean"></option>
+          <option value="Beninese"></option>
+          <option value="Bermudian"></option>
+          <option value="Bhutanese"></option>
+          <option value="Bolivian"></option>
+          <option value="Bosnian"></option>
+          <option value="Brazilian"></option>
+          <option value="Bruneian"></option>
+          <option value="Bulgarian"></option>
+          <option value="Burkinabe"></option>
+          <option value="Burmese"></option>
+          <option value="Burundian"></option>
+          <option value="Byelorussian"></option>
+          <option value="Cambodian"></option>
+          <option value="Cameroonian"></option>
+          <option value="Canadian"></option>
+          <option value="Cape Verdean"></option>
+          <option value="Caymanian"></option>
+          <option value="Central African"></option>
+          <option value="Chadian"></option>
+          <option value="Chilean"></option>
+          <option value="Chinese"></option>
+          <option value="Colombian"></option>
+          <option value="Comorian"></option>
+          <option value="Congolese"></option>
+          <option value="Costa Rican"></option>
+          <option value="Croatian"></option>
+          <option value="Cuban"></option>
+          <option value="Cypriot"></option>
+          <option value="Czech"></option>
+          <option value="Danish"></option>
+          <option value="Djiboutian"></option>
+          <option value="Dominica Islander"></option>
+          <option value="Dominican"></option>
+          <option value="Dutch"></option>
+          <option value="Ecuadorian"></option>
+          <option value="Egyptian"></option>
+          <option value="English"></option>
+          <option value="Eritrean"></option>
+          <option value="Estonian"></option>
+          <option value="Ethiopian"></option>
+          <option value="Faroese"></option>
+          <option value="Fijian"></option>
+          <option value="Filipino"></option>
+          <option value="Finnish"></option>
+          <option value="French"></option>
+          <option value="Gabonese"></option>
+          <option value="Gambian"></option>
+          <option value="Georgian"></option>
+          <option value="German"></option>
+          <option value="Ghanaian"></option>
+          <option value="Gibraltarian"></option>
+          <option value="Greek"></option>
+          <option value="Greenlandic"></option>
+          <option value="Grenadian"></option>
+          <option value="Guadeloupean"></option>
+          <option value="Guatemalan"></option>
+          <option value="Guinean"></option>
+          <option value="Guyanese"></option>
+          <option value="Haitian"></option>
+          <option value="Honduran"></option>
+          <option value="Hong Konger"></option>
+          <option value="Hungarian"></option>
+          <option value="Icelandic"></option>
+          <option value="Indian (India)"></option>
+          <option value="Indonesian"></option>
+          <option value="Iranian"></option>
+          <option value="Iraqi"></option>
+          <option value="Irish"></option>
+          <option value="Israeli"></option>
+          <option value="Italian"></option>
+          <option value="Ivorian"></option>
+          <option value="Jamaican"></option>
+          <option value="Japanese"></option>
+          <option value="Jordanian"></option>
+          <option value="Kazakh"></option>
+          <option value="Kenyan"></option>
+          <option value="Kittitian/Nevisian"></option>
+          <option value="Korean"></option>
+          <option value="Kosovar"></option>
+          <option value="Kuwaiti"></option>
+          <option value="Kyrgyz"></option>
+          <option value="Laotian"></option>
+          <option value="Latvian"></option>
+          <option value="Lebanese"></option>
+          <option value="Liberian"></option>
+          <option value="Libyan"></option>
+          <option value="Liechtensteiner"></option>
+          <option value="Lithuanian"></option>
+          <option value="Luxembourger"></option>
+          <option value="Macedonian"></option>
+          <option value="Malagasy"></option>
+          <option value="Malawian"></option>
+          <option value="Malaysian"></option>
+          <option value="Malian"></option>
+          <option value="Maltese"></option>
+          <option value="Manx"></option>
+          <option value="Martinican"></option>
+          <option value="Mauritanian"></option>
+          <option value="Mauritian"></option>
+          <option value="Mexican"></option>
+          <option value="Moldovan"></option>
+          <option value="Mongolian"></option>
+          <option value="Montenegrin"></option>
+          <option value="Montserratan"></option>
+          <option value="Moroccan"></option>
+          <option value="Mozambican"></option>
+          <option value="Namibian"></option>
+          <option value="Nepali"></option>
+          <option value="New Zealander"></option>
+          <option value="Nicaraguan"></option>
+          <option value="Nigerian"></option>
+          <option value="Nigerien"></option>
+          <option value="Northern Irish"></option>
+          <option value="Norwegian"></option>
+          <option value="Omani"></option>
+          <option value="Pakistani"></option>
+          <option value="Palestinian"></option>
+          <option value="Panamanian"></option>
+          <option value="Papua New Guinean"></option>
+          <option value="Paraguayan"></option>
+          <option value="Peruvian"></option>
+          <option value="Polish"></option>
+          <option value="Portuguese"></option>
+          <option value="Puerto Rican"></option>
+          <option value="Réunionnais"></option>
+          <option value="Romanian"></option>
+          <option value="Russian"></option>
+          <option value="Rwandan"></option>
+          <option value="Saint Helenian"></option>
+          <option value="Salvadorean"></option>
+          <option value="Samoan"></option>
+          <option value="Saudi Arabian"></option>
+          <option value="Scottish"></option>
+          <option value="Senegalese"></option>
+          <option value="Serbian"></option>
+          <option value="Seychellois"></option>
+          <option value="Sierra Leonean"></option>
+          <option value="Singaporean"></option>
+          <option value="Slovak"></option>
+          <option value="Slovenian"></option>
+          <option value="Somali"></option>
+          <option value="South African"></option>
+          <option value="South Sudanese"></option>
+          <option value="Spanish"></option>
+          <option value="Sri Lankan"></option>
+          <option value="St. Lucian"></option>
+          <option value="Sudanese"></option>
+          <option value="Surinamese"></option>
+          <option value="Swazi"></option>
+          <option value="Swedish"></option>
+          <option value="Swiss"></option>
+          <option value="Syrian"></option>
+          <option value="Tahitian"></option>
+          <option value="Taiwanese"></option>
+          <option value="Tajik"></option>
+          <option value="Tanzanian"></option>
+          <option value="Thai"></option>
+          <option value="Togolese"></option>
+          <option value="Tongan"></option>
+          <option value="Trinidadian/Tobagonian"></option>
+          <option value="Tunisian"></option>
+          <option value="Turkish"></option>
+          <option value="Turkmen"></option>
+          <option value="Ugandan"></option>
+          <option value="Ukrainian"></option>
+          <option value="Uruguayan"></option>
+          <option value="Uzbek"></option>
+          <option value="Venezuelan"></option>
+          <option value="Vietnamese"></option>
+          <option value="Vincentian"></option>
+          <option value="Welsh"></option>
+          <option value="Yemeni"></option>
+          <option value="Zambian"></option>
+          <option value="Zimbabwean"></option>
+        </datalist>
+
+        <datalist id="other-origin-options">
+          <option value="Acadian"></option>
+          <option value="Afar"></option>
+          <option value="African"></option>
+          <option value="African American"></option>
+          <option value="African Canadian"></option>
+          <option value="African Caribbean"></option>
+          <option value="African Nova Scotian"></option>
+          <option value="Afrikaner"></option>
+          <option value="Akan"></option>
+          <option value="Albertan"></option>
+          <option value="Alsatian"></option>
+          <option value="Amhara"></option>
+          <option value="Amish"></option>
+          <option value="Anglo-Indian"></option>
+          <option value="Arab"></option>
+          <option value="Arawak"></option>
+          <option value="Ashanti"></option>
+          <option value="Asian"></option>
+          <option value="Assyrian"></option>
+          <option value="Baloch"></option>
+          <option value="Bambara"></option>
+          <option value="Bamileke"></option>
+          <option value="Bantu"></option>
+          <option value="Baoulé"></option>
+          <option value="Bashkir"></option>
+          <option value="Basque"></option>
+          <option value="Batswana"></option>
+          <option value="Bavarian"></option>
+          <option value="Bengali"></option>
+          <option value="Berber"></option>
+          <option value="Black"></option>
+          <option value="Bohemian"></option>
+          <option value="Bosniak"></option>
+          <option value="Breton"></option>
+          <option value="British"></option>
+          <option value="British Columbian"></option>
+          <option value="Buddhist"></option>
+          <option value="Cape Bretoner"></option>
+          <option value="Carib"></option>
+          <option value="Caribbean"></option>
+          <option value="Catalan"></option>
+          <option value="Caucasian (White)"></option>
+          <option value="Celtic"></option>
+          <option value="Central African"></option>
+          <option value="Central American"></option>
+          <option value="Central Asian"></option>
+          <option value="Chaldean"></option>
+          <option value="Channel Islander"></option>
+          <option value="Chechen"></option>
+          <option value="Chin"></option>
+          <option value="Christian"></option>
+          <option value="Circassian"></option>
+          <option value="Coptic"></option>
+          <option value="Cornish"></option>
+          <option value="Corsican"></option>
+          <option value="Creole"></option>
+          <option value="Czechoslovakian"></option>
+          <option value="Dinka"></option>
+          <option value="Doukhobor"></option>
+          <option value="East African"></option>
+          <option value="East Asian"></option>
+          <option value="Eastern European"></option>
+          <option value="Edo"></option>
+          <option value="Esan"></option>
+          <option value="Eurasian"></option>
+          <option value="European"></option>
+          <option value="Ewe"></option>
+          <option value="Fante"></option>
+          <option value="Flemish"></option>
+          <option value="Franco Ontarian"></option>
+          <option value="French Canadian"></option>
+          <option value="Frisian"></option>
+          <option value="Fulani"></option>
+          <option value="Ga-Adangbe"></option>
+          <option value="Galician"></option>
+          <option value="Gaspesian"></option>
+          <option value="Goan"></option>
+          <option value="Greek Cypriot"></option>
+          <option value="Gujarati"></option>
+          <option value="Harari"></option>
+          <option value="Hausa"></option>
+          <option value="Hawaiian"></option>
+          <option value="Hazara"></option>
+          <option value="Hindu"></option>
+          <option value="Hispanic"></option>
+          <option value="Hmong"></option>
+          <option value="Huguenot"></option>
+          <option value="Hutterite"></option>
+          <option value="Hutu"></option>
+          <option value="Igbo"></option>
+          <option value="Igorot"></option>
+          <option value="Ilocano"></option>
+          <option value="Indigenous"></option>
+          <option value="Indo-Caribbean"></option>
+          <option value="Indo-Fijian"></option>
+          <option value="Indo-Guyanese"></option>
+          <option value="Jatt"></option>
+          <option value="Javanese"></option>
+          <option value="Jewish"></option>
+          <option value="Kabyle"></option>
+          <option value="Karen"></option>
+          <option value="Kashmiri"></option>
+          <option value="Kashubian"></option>
+          <option value="Khmer"></option>
+          <option value="Kikuyu"></option>
+          <option value="Kurdish"></option>
+          <option value="Latin American"></option>
+          <option value="Luba"></option>
+          <option value="Luo"></option>
+          <option value="Maghrebi"></option>
+          <option value="Maharashtrian"></option>
+          <option value="Malay"></option>
+          <option value="Malayali"></option>
+          <option value="Malinké"></option>
+          <option value="Manitoban"></option>
+          <option value="Maori"></option>
+          <option value="Mapuche"></option>
+          <option value="Maroon"></option>
+          <option value="Mayan"></option>
+          <option value="Mennonite"></option>
+          <option value="Middle Eastern"></option>
+          <option value="Moravian"></option>
+          <option value="Mossi"></option>
+          <option value="Muslim"></option>
+          <option value="Ndebele"></option>
+          <option value="New Brunswicker"></option>
+          <option value="Newfoundlander"></option>
+          <option value="Norman"></option>
+          <option value="North African"></option>
+          <option value="North American"></option>
+          <option value="Northern European"></option>
+          <option value="Nova Scotian"></option>
+          <option value="Nubian"></option>
+          <option value="Oceanian"></option>
+          <option value="Ontarian"></option>
+          <option value="Orcadian"></option>
+          <option value="Oromo"></option>
+          <option value="Pacific Islander"></option>
+          <option value="Pashtun"></option>
+          <option value="Pennsylvania Dutch"></option>
+          <option value="Persian"></option>
+          <option value="Pipil"></option>
+          <option value="Polynesian"></option>
+          <option value="Prince Edward Islander"></option>
+          <option value="Punjabi"></option>
+          <option value="Québécois"></option>
+          <option value="Quechua"></option>
+          <option value="Rohingya"></option>
+          <option value="Roma"></option>
+          <option value="Ruthenian"></option>
+          <option value="Sami"></option>
+          <option value="Saskatchewanian"></option>
+          <option value="Scandinavian"></option>
+          <option value="Serer"></option>
+          <option value="Shona"></option>
+          <option value="Sicilian"></option>
+          <option value="Sikh"></option>
+          <option value="Sindhi"></option>
+          <option value="Sinhalese"></option>
+          <option value="Slavic"></option>
+          <option value="Soninke"></option>
+          <option value="South American"></option>
+          <option value="South Asian"></option>
+          <option value="Southeast Asian"></option>
+          <option value="Southeast European"></option>
+          <option value="Southern European"></option>
+          <option value="Swahili"></option>
+          <option value="Tamil"></option>
+          <option value="Tatar"></option>
+          <option value="Telugu"></option>
+          <option value="Tibetan"></option>
+          <option value="Tigrian"></option>
+          <option value="Transylvanian"></option>
+          <option value="Tswana"></option>
+          <option value="Turkish Cypriot"></option>
+          <option value="Tutsi"></option>
+          <option value="Ulster Scot"></option>
+          <option value="United Empire Loyalist"></option>
+          <option value="Uyghur"></option>
+          <option value="Walloon"></option>
+          <option value="West African"></option>
+          <option value="West Asian"></option>
+          <option value="West Indian"></option>
+          <option value="Western European"></option>
+          <option value="Wolof"></option>
+          <option value="Xhosa"></option>
+          <option value="Yazidi"></option>
+          <option value="Yoruba"></option>
+          <option value="Yugoslavian"></option>
+          <option value="Zoroastrian"></option>
+          <option value="Zulu"></option>
+        </datalist>
+        </div>
+
+
+        
+        <div class="cr-panel streamlined-action-panel">
+          <div class="cr-panel-title">Participant-Identified Considerations / Actions</div>
+          <div class="action-form-row">
+            <label>Participant-Identified Considerations / Actions<br><small>Optional — document any requested support, preference, or follow-up.</small></label>
+            <textarea class="wide-textarea streamlined-action-textarea" placeholder="Free text"></textarea>
+          </div>
+        </div>
+
+      </section>
+
+
+      <section class="screen" id="disability-accessibility">
+        <header class="section-title">Disability and Accessibility</header>
+
+        <div class="cr-panel disability-panel">
+          <div class="cr-panel-title">Disability Identity</div>
+          <div class="disability-question-row">
+            <label>Do you identify as a person with disabilities?</label>
+            <div class="disability-checkbox-grid compact-disability-grid">
+              <label><input type="radio" name="disability-identity" value="yes"> Yes</label>
+              <label><input type="radio" name="disability-identity" value="no"> No</label>
+              <label><input type="radio" name="disability-identity" value="do-not-know"> Do not know</label>
+              <label><input type="radio" name="disability-identity" value="prefer-not-to-answer"> Prefer not to answer</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="cr-panel disability-panel conditional-field" data-conditional-group="disability-identity" data-conditional-values="yes" hidden>
+          <div class="cr-panel-title">Type of Disability</div>
+          <div class="disability-question-row">
+            <label>If you wish, please specify the type of disability<br><small>Select all that apply.</small></label>
+            <div class="disability-checkbox-grid disability-type-grid">
+              <label><input type="checkbox" name="disability-type" value="alzheimer-dementia"> Alzheimer’s Disease/Dementia</label>
+              <label><input type="checkbox" name="disability-type" value="autism-spectrum-disorder"> Autism Spectrum Disorder</label>
+              <label><input type="checkbox" name="disability-type" value="chronic-illness"> Chronic Illness <span class="option-example">(e.g., sickle cell, diabetes, etc.)</span></label>
+              <label><input type="checkbox" name="disability-type" value="cognitive-disability"> Cognitive Disability</label>
+              <label><input type="checkbox" name="disability-type" value="developmental-disability"> Developmental Disability</label>
+              <label><input type="checkbox" name="disability-type" value="drug-alcohol-dependence"> Drug or Alcohol Dependence</label>
+              <label><input type="checkbox" name="disability-type" value="learning-disability"> Learning Disability</label>
+              <label><input type="checkbox" name="disability-type" value="mental-illness"> Mental Illness</label>
+              <label><input type="checkbox" name="disability-type" value="physical-disability"> Physical Disability</label>
+              <label><input type="checkbox" name="disability-type" value="sensory-disability"> Sensory Disability <span class="option-example">(e.g., low vision, blindness, deafness, hard of hearing, etc.)</span></label>
+              <label><input type="checkbox" name="disability-type" value="none"> None</label>
+              <label><input type="checkbox" name="disability-type" value="do-not-know"> Do not know</label>
+              <label><input type="checkbox" name="disability-type" value="prefer-not-to-answer"> Prefer not to answer</label>
+              <label class="disability-other-option"><input type="checkbox" name="disability-type" value="other"> Other</label>
+            </div>
+          </div>
+          <div class="form-row language-row conditional-field" data-conditional-group="disability-type" data-conditional-values="other" hidden>
+            <label>Other Disability Type<br><small>Please specify</small></label>
+            <input class="wide-input" placeholder="Free text">
+          </div>
+        </div>
+
+        <div class="cr-panel disability-panel">
+          <div class="cr-panel-title">Accessibility or Accommodation Needs</div>
+          <div class="disability-question-row">
+            <label>Document supports needed for participation<br><small>Select all that apply.</small></label>
+            <div class="disability-checkbox-grid accessibility-grid">
+              <label><input type="checkbox" name="accessibility-needs" value="mobility-support"> Mobility support</label>
+              <label><input type="checkbox" name="accessibility-needs" value="hearing-support"> Hearing support</label>
+              <label><input type="checkbox" name="accessibility-needs" value="vision-support"> Vision support</label>
+              <label><input type="checkbox" name="accessibility-needs" value="cognitive-learning-support"> Cognitive or learning support</label>
+              <label><input type="checkbox" name="accessibility-needs" value="communication-support"> Communication support</label>
+              <label><input type="checkbox" name="accessibility-needs" value="physical-space-accommodation"> Physical space accommodation</label>
+              <label><input type="checkbox" name="accessibility-needs" value="other"> Other</label>
+            </div>
+          </div>
+          <div class="form-row language-row conditional-field" data-conditional-group="accessibility-needs" data-conditional-values="other" hidden>
+            <label>Other Accessibility or Accommodation Need<br><small>Please specify</small></label>
+            <input class="wide-input" placeholder="Free text">
+          </div>
+        </div>
+
+        <div class="cr-panel disability-panel">
+          <div class="cr-panel-title">Exercise Participation Considerations</div>
+          <div class="form-row language-row">
+            <label>Exercise Participation Considerations</label>
+            <textarea class="wide-textarea disability-textarea" placeholder="Briefly document disability-related considerations that may affect exercise assessment, exercise prescription, equipment use, supervision needs, or program format."></textarea>
+          </div>
+        </div>
+
+        <div class="cr-panel streamlined-action-panel">
+          <div class="cr-panel-title">Accessibility Considerations / Actions</div>
+          <div class="action-form-row">
+            <label>Accessibility Considerations / Actions<br><small>Optional — document accommodations, modifications, supports, or follow-up.</small></label>
+            <textarea class="wide-textarea streamlined-action-textarea" placeholder="Free text"></textarea>
+          </div>
+        </div>
+      </section>
+
+
+
+      <section class="screen" id="geography-transportation-digital">
+        <header class="section-title">Geography, Transportation, and Digital Access</header>
+
+        <div class="cr-panel geography-panel">
+          <div class="cr-panel-title">Geography</div>
+
+          <div class="geo-form-row">
+            <label>Postal Code<br><small>Auto-populate from intake data</small></label>
+            <input class="auto-populated-field" value="Auto-populated from registration data" readonly aria-readonly="true">
+            <span class="field-note">auto-populate</span>
+          </div>
+
+          <div class="geo-form-row">
+            <label>Rural / Urban Location<br><small>If derivable from postal code</small></label>
+            <div class="geo-checkbox-grid compact-geo-grid">
+              <label><input type="radio" name="rural-urban" value="urban"> Urban</label>
+              <label><input type="radio" name="rural-urban" value="rural"> Rural</label>
+              <label><input type="radio" name="rural-urban" value="suburban-small-community"> Suburban / small community</label>
+              <label><input type="radio" name="rural-urban" value="unable-to-derive"> Unable to derive</label>
+            </div>
+            <span class="field-note">derived where possible</span>
+          </div>
+
+          <div class="geo-form-row">
+            <label>Travel Distance<br><small>To cardiac rehabilitation site</small></label>
+            <div class="inline-field-group">
+              <input type="number" min="0" step="1" inputmode="numeric" placeholder="0"><span class="unit">km</span>
+              <label><input type="checkbox" name="travel-distance"> Not applicable / virtual or telephone participation</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="cr-panel geography-panel">
+          <div class="cr-panel-title">Transportation and Travel-Related Barriers</div>
+
+          <div class="geo-question-row">
+            <label>Transportation Barriers<br><small>Select all that apply.</small></label>
+            <div class="geo-checkbox-grid">
+              <label><input type="checkbox" name="transportation-barriers"> No reliable transportation</label>
+              <label><input type="checkbox" name="transportation-barriers"> Requires assistance to travel</label>
+              <label><input type="checkbox" name="transportation-barriers"> Public transportation is difficult or unavailable</label>
+              <label><input type="checkbox" name="transportation-barriers"> Mobility or accessibility limits travel</label>
+              <label><input type="checkbox" name="transportation-barriers"> Weather or seasonal travel concerns</label>
+              <label><input type="checkbox" name="transportation-barriers"> Caregiver / support person needed for travel</label>
+              <label><input type="checkbox" name="transportation-barriers"> No transportation barrier identified</label>
+              <label><input type="checkbox" name="transportation-barriers" value="other"> Other</label>
+            </div>
+          </div>
+
+          <div class="geo-form-row conditional-field" data-conditional-group="transportation-barriers" data-conditional-values="other" hidden>
+            <label>Other Transportation Barrier<br><small>Please specify</small></label>
+            <input class="wide-input" placeholder="Free text">
+          </div>
+
+          <div class="geo-question-row">
+            <label>Parking or Travel-Related Cost Concerns</label>
+            <div class="geo-checkbox-grid compact-geo-grid">
+              <label><input type="radio" name="travel-cost" value="yes"> Yes</label>
+              <label><input type="radio" name="travel-cost" value="no"> No</label>
+              <label><input type="radio" name="travel-cost" value="unsure"> Unsure</label>
+              <label><input type="radio" name="travel-cost" value="prefer-not-to-answer"> Prefer not to answer</label>
+            </div>
+          </div>
+
+          <div class="geo-form-row">
+            <label>Cost Concern Notes</label>
+            <textarea class="wide-textarea geo-textarea" placeholder="Brief notes about parking, fuel, public transit, taxi/rideshare, or other travel-related cost concerns."></textarea>
+          </div>
+        </div>
+
+        <div class="cr-panel geography-panel">
+          <div class="cr-panel-title">Digital Access and Virtual Care</div>
+
+          <div class="geo-question-row">
+            <label>Internet / Device Access<br><small>Select all that apply.</small></label>
+            <div class="geo-checkbox-grid">
+              <label><input type="checkbox" name="digital-access"> Reliable internet access</label>
+              <label><input type="checkbox" name="digital-access"> Limited or unreliable internet access</label>
+              <label><input type="checkbox" name="digital-access"> Has smartphone</label>
+              <label><input type="checkbox" name="digital-access"> Has computer or tablet</label>
+              <label><input type="checkbox" name="digital-access"> No device available for virtual care</label>
+              <label><input type="checkbox" name="digital-access"> Requires technical support</label>
+              <label><input type="checkbox" name="digital-access"> Unknown</label>
+              <label><input type="checkbox" name="digital-access"> Prefer not to answer</label>
+            </div>
+          </div>
+
+          <div class="geo-question-row">
+            <label>Comfort with Virtual Care</label>
+            <div class="geo-checkbox-grid compact-geo-grid">
+              <label><input type="radio" name="virtual-comfort" value="comfortable"> Comfortable</label>
+              <label><input type="radio" name="virtual-comfort" value="somewhat-comfortable"> Somewhat comfortable</label>
+              <label><input type="radio" name="virtual-comfort" value="not-comfortable"> Not comfortable</label>
+              <label><input type="radio" name="virtual-comfort" value="needs-support-orientation"> Needs support / orientation</label>
+              <label><input type="radio" name="virtual-comfort" value="not-interested-in-virtual-care"> Not interested in virtual care</label>
+              <label><input type="radio" name="virtual-comfort" value="prefer-not-to-answer"> Prefer not to answer</label>
+            </div>
+          </div>
+
+          <div class="geo-question-row">
+            <label>Private Space for Virtual Appointments</label>
+            <div class="geo-checkbox-grid compact-geo-grid">
+              <label><input type="radio" name="private-space" value="yes"> Yes</label>
+              <label><input type="radio" name="private-space" value="no"> No</label>
+              <label><input type="radio" name="private-space" value="sometimes"> Sometimes</label>
+              <label><input type="radio" name="private-space" value="unsure"> Unsure</label>
+              <label><input type="radio" name="private-space" value="prefer-not-to-answer"> Prefer not to answer</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="cr-panel geography-panel">
+          <div class="cr-panel-title">Participation Format Considerations</div>
+
+          <div class="geo-question-row">
+            <label>Preferred / Feasible Program Format<br><small>Select all that apply.</small></label>
+            <div class="geo-checkbox-grid compact-geo-grid">
+              <label><input type="checkbox" name="program-format"> In-person</label>
+              <label><input type="checkbox" name="program-format"> Virtual</label>
+              <label><input type="checkbox" name="program-format"> Telephone</label>
+              <label><input type="checkbox" name="program-format"> Hybrid</label>
+              <label><input type="checkbox" name="program-format"> Needs assessment before format selected</label>
+            </div>
+          </div>
+
+          <div class="geo-form-row">
+            <label>Participation Barriers / Actions<br><small>Optional — document barriers, supports, or follow-up.</small></label>
+            <textarea class="wide-textarea geo-textarea" placeholder="Free text"></textarea>
+          </div>
+        </div>
+      </section>
+
+
+
+      <section class="screen" id="socioeconomic-support">
+        <header class="section-title">Socioeconomic Needs and Additional Support</header>
+
+        <div class="cr-panel socioeconomic-panel">
+          <div class="cr-panel-title">Housing Status</div>
+
+          <div class="socio-question-row">
+            <label>What is your current housing situation?</label>
+            <div class="socio-checkbox-grid">
+              <label><input type="radio" name="housing-status" value="a-place-you-or-your-family-owns"> A place you or your family owns</label>
+              <label><input type="radio" name="housing-status" value="a-place-you-or-your-family-rents"> A place you or your family rents</label>
+              <label><input type="radio" name="housing-status" value="social-housing-subsidized-housing-or-rent-geared-to-income"> Social housing, subsidized housing or rent-geared-to-income</label>
+              <label><input type="radio" name="housing-status" value="supportive-housing-or-group-home"> Supportive housing or group home</label>
+              <label><input type="radio" name="housing-status" value="long-term-care-facility"> Long-term care facility</label>
+              <label><input type="radio" name="housing-status" value="correctional-facility"> Correctional facility</label>
+              <label><input type="radio" name="housing-status" value="staying-in-someone-else-s-place-because-you-have-no-alternative"> Staying in someone else’s place because you have no alternative</label>
+              <label><input type="radio" name="housing-status" value="experiencing-homelessness-e-g-shelter-living-in-a-public-place-or-vehicle"> Experiencing homelessness <span class="option-example">(e.g., shelter, living in a public place or vehicle)</span></label>
+              <label><input type="radio" name="housing-status" value="other"> Other</label>
+              <label><input type="radio" name="housing-status" value="do-not-know"> Do not know</label>
+              <label><input type="radio" name="housing-status" value="prefer-not-to-answer"> Prefer not to answer</label>
+            </div>
+          </div>
+
+          <div class="socio-form-row conditional-field" data-conditional-group="housing-status" data-conditional-values="other" hidden>
+            <label>Other Housing Situation<br><small>Please specify</small></label>
+            <input class="wide-input" placeholder="Free text">
+          </div>
+
+          <div class="socio-question-row">
+            <label>Who do you live with?<br><small>Select all that apply.</small></label>
+            <div class="socio-checkbox-grid">
+              <label><input type="checkbox" name="live-with"> Parent(s) or guardian(s)</label>
+              <label><input type="checkbox" name="live-with"> Spouse or partner</label>
+              <label><input type="checkbox" name="live-with"> Child(ren)</label>
+              <label><input type="checkbox" name="live-with"> Grandparent(s)</label>
+              <label><input type="checkbox" name="live-with"> Sibling(s)</label>
+              <label><input type="checkbox" name="live-with"> Other family</label>
+              <label><input type="checkbox" name="live-with"> Friends or roommates</label>
+              <label><input type="checkbox" name="live-with"> Paid caregiver or attendant</label>
+              <label><input type="checkbox" name="live-with"> Alone</label>
+              <label><input type="checkbox" name="live-with" value="other"> Other</label>
+              <label><input type="checkbox" name="live-with"> Do not know</label>
+              <label><input type="checkbox" name="live-with"> Prefer not to answer</label>
+            </div>
+          </div>
+
+          <div class="socio-form-row conditional-field" data-conditional-group="live-with" data-conditional-values="other" hidden>
+            <label>Other Living Arrangement<br><small>Please specify</small></label>
+            <input class="wide-input" placeholder="Free text">
+          </div>
+        </div>
+
+        <div class="cr-panel socioeconomic-panel">
+          <div class="cr-panel-title">Caregiver Responsibilities</div>
+
+          <div class="socio-form-row">
+            <label>Caregiver Responsibilities</label>
+            <textarea class="wide-textarea socio-textarea" placeholder="Free text"></textarea>
+          </div>
+        </div>
+
+        <div class="cr-panel socioeconomic-panel">
+          <div class="cr-panel-title">Preferred Support Person</div>
+
+          <div class="socio-form-row">
+            <label>Preferred Support Person</label>
+            <input class="wide-input" placeholder="Name / relationship / contact details, if appropriate">
+          </div>
+
+          <div class="socio-question-row">
+            <label>Support Person Involvement<br><small>Select all that apply.</small></label>
+            <div class="socio-checkbox-grid compact-socio-grid">
+              <label><input type="checkbox" name="support-person-involvement"> May be included in care discussions</label>
+              <label><input type="checkbox" name="support-person-involvement"> May be included in appointment reminders</label>
+              <label><input type="checkbox" name="support-person-involvement"> May support home exercise / program participation</label>
+              <label><input type="checkbox" name="support-person-involvement"> Do not involve support person at this time</label>
+              <label><input type="checkbox" name="support-person-involvement"> Patient will decide later</label>
+              <label><input type="checkbox" name="support-person-involvement" value="other"> Other</label>
+            </div>
+          </div>
+
+          <div class="socio-form-row conditional-field" data-conditional-group="support-person-involvement" data-conditional-values="other" hidden>
+            <label>Other Support Person Involvement<br><small>Please specify</small></label>
+            <input class="wide-input" placeholder="Free text">
+          </div>
+        </div>
+
+        <div class="cr-panel socioeconomic-panel">
+          <div class="cr-panel-title">Educational Attainment</div>
+
+          <div class="socio-question-row">
+            <label>What is your current level of education?</label>
+            <div class="socio-checkbox-grid">
+              <label><input type="radio" name="education-level" value="grade-school-grade-1-8"> Grade school <span class="option-example">(grade 1-8)</span></label>
+              <label><input type="radio" name="education-level" value="some-high-school-but-did-not-graduate"> Some high school, but did not graduate</label>
+              <label><input type="radio" name="education-level" value="high-school-or-high-school-equivalency-certificate-grade-9-12"> High school or high school equivalency certificate <span class="option-example">(grade 9-12)</span></label>
+              <label><input type="radio" name="education-level" value="completed-registered-apprenticeship-or-other-trades-certificate-or-diploma-or-ongoing"> Completed Registered Apprenticeship or other trades certificate or diploma <span class="option-example">(or ongoing)</span></label>
+              <label><input type="radio" name="education-level" value="college-cegep-or-other-non-university-certificate-or-diploma-or-ongoing"> College, CEGEP or other non-university certificate or diploma <span class="option-example">(or ongoing)</span></label>
+              <label><input type="radio" name="education-level" value="undergraduate-degree-or-some-university"> Undergraduate degree or some university</label>
+              <label><input type="radio" name="education-level" value="postgraduate-degree-or-professional-designation-e-g-master-s-phd-md"> Postgraduate degree or professional designation <span class="option-example">(e.g., Master’s, PhD, MD)</span></label>
+              <label><input type="radio" name="education-level" value="not-applicable"> Not applicable</label>
+              <label><input type="radio" name="education-level" value="do-not-know"> Do not know</label>
+              <label><input type="radio" name="education-level" value="prefer-not-to-answer"> Prefer not to answer</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="cr-panel socioeconomic-panel">
+          <div class="cr-panel-title">Occupation</div>
+
+          <div class="socio-form-row">
+            <label>Occupation</label>
+            <input class="wide-input" placeholder="Free text">
+          </div>
+        </div>
+
+        <div class="cr-panel socioeconomic-panel">
+          <div class="cr-panel-title">Employment Status</div>
+
+          <div class="socio-question-row">
+            <label>Which of the following best describes your current employment status?</label>
+            <div class="socio-checkbox-grid">
+              <label><input type="radio" name="employment-status" value="employed-full-time-permanent"> Employed – full time <span class="option-example">(permanent)</span></label>
+              <label><input type="radio" name="employment-status" value="employed-part-time-permanent"> Employed – part time <span class="option-example">(permanent)</span></label>
+              <label><input type="radio" name="employment-status" value="employed-casual-on-call-temporary-or-seasonal"> Employed – casual, on-call, temporary or seasonal</label>
+              <label><input type="radio" name="employment-status" value="unemployed-or-looking-for-a-job"> Unemployed or looking for a job</label>
+              <label><input type="radio" name="employment-status" value="stay-at-home-caregiver"> Stay at home caregiver</label>
+              <label><input type="radio" name="employment-status" value="student"> Student</label>
+              <label><input type="radio" name="employment-status" value="retired"> Retired</label>
+              <label><input type="radio" name="employment-status" value="unable-to-work"> Unable to work</label>
+              <label><input type="radio" name="employment-status" value="other"> Other</label>
+              <label><input type="radio" name="employment-status" value="do-not-know"> Do not know</label>
+              <label><input type="radio" name="employment-status" value="prefer-not-to-answer"> Prefer not to answer</label>
+            </div>
+          </div>
+
+          <div class="socio-form-row conditional-field" data-conditional-group="employment-status" data-conditional-values="other" hidden>
+            <label>Other Employment Status<br><small>Please specify</small></label>
+            <input class="wide-input" placeholder="Free text">
+          </div>
+
+          <div class="socio-form-row">
+            <label>Desired Occupational Status</label>
+            <input class="wide-input" placeholder="Free text">
+          </div>
+
+          <div class="socio-form-row work-return-row">
+            <label>Work Return</label>
+            <div class="inline-field-group">
+              <label><input type="checkbox" name="work-return" value="yes"> Returned to work</label>
+              <span class="conditional-field work-return-date" data-conditional-group="work-return" data-conditional-values="yes" hidden>
+                <span>Date of Return</span>
+                <input type="date">
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="cr-panel streamlined-action-panel">
+          <div class="cr-panel-title">Support Needs / Actions</div>
+          <div class="action-form-row">
+            <label>Support Needs / Actions<br><small>Optional — document relevant supports, referrals, or follow-up.</small></label>
+            <textarea class="wide-textarea streamlined-action-textarea" placeholder="Free text"></textarea>
+          </div>
+        </div>
+
+      </section>
+
+
+      <section class="screen" id="vitals">
+        <header class="section-title">Height/Weight/Waist Circumference</header>
+        <div class="grid two-column">
+          <div>
+            <div class="form-row"><label>Weight<br><small>(Measured)</small></label><input><span class="unit">kg</span></div>
+            <div class="form-row"><label>Height<br><small>(Measured)</small></label><input><span class="unit">cm</span></div>
+            <div class="form-row"><label>Weight<br><small>(Estimated/Reported)</small></label><input><span class="unit">kg</span></div>
+            <div class="form-row"><label>Height<br><small>(Estimated/Reported)</small></label><input><span class="unit">cm</span></div>
+            <div class="form-row"><label>Abdominal/Waist<br>Circumference</label><input><span class="unit">cm</span></div>
+          </div>
+          <div class="calculation-panel">
+            <div class="calc-pair"><label>BMI</label><input><label>BSA</label><input></div>
+            <div class="calc-pair"><label>Estimated<br>BMI</label><input><label>Estimated<br>BSA</label><input></div>
+            <p><strong>BMI</strong> = Body Mass Index</p>
+            <p><strong>BSA</strong> = Body Surface Area</p>
+            <p class="note">To calculate the patient’s BMI and BSA, both weight and height must be entered.</p>
+          </div>
+        </div>
+
+        <div class="range-block">
+          <label>Ideal Weight Range</label><input><span>–</span><input>
+          <label>Estimated Ideal Weight Range</label><input><span>–</span><input>
+        </div>
+
+        <div class="warning-block">
+          <div class="warning">The first recorded height and date recorded should only be entered by the Pulmonary Functions RRT</div>
+          <label>First Recorded Height</label><input><span class="unit">cm</span>
+          <label>Date Height First Recorded</label><input type="date">
+        </div>
+
+        <header class="section-title short">Vital Signs</header>
+        <div class="vital-row"><label>Temperature</label><input><span class="unit">DegC</span><label>oral</label><label>axilla</label><label>tympanic</label><label>temporal</label></div>
+        <div class="form-row compact"><label>Pulse</label><input><span class="unit">bpm</span></div>
+        <div class="form-row compact"><label>Blood Pressure</label><input><span>/</span><input><span class="unit">mmHg</span></div>
+        <div class="form-row compact"><label>Respiratory Rate</label><input><span class="unit">br/min</span></div>
+        <div class="form-row compact"><label>O2 Sat</label><input><span class="unit">%</span></div>
+        <div class="option-row"><label>Oxygen Therapy</label><label><input type="radio" name="oxygen"> Room air</label><label><input type="radio" name="oxygen"> Nasal prongs</label><label><input type="radio" name="oxygen"> Other</label></div>
+      </section>
+
+      <section class="screen" id="additional-vitals">
+        <header class="section-title">Additional Vitals</header>
+        <div class="form-row"><label>Rectal Temperature</label><input><span class="unit">DegC</span><label>Comments</label><input class="wide-input"></div>
+        <hr>
+        <div class="form-row"><label>Heart Rate (monitor)</label><input><span class="unit">bpm</span></div>
+        <div class="bp-grid">
+          <label>Blood Pressure</label>
+          <span>Left Arm<br>Systolic/Diastolic BP</span><input><span>/</span><input>
+          <span>Right Arm<br>Systolic/Diastolic BP</span><input><span>/</span><input>
+          <span>Left Leg<br>Systolic/Diastolic BP</span><input><span>/</span><input>
+          <span>Right Leg<br>Systolic/Diastolic BP</span><input><span>/</span><input>
+        </div>
+        <header class="section-title short">Orthostatic Vitals</header>
+        <div class="orthostatic-grid">
+          <label>Pulse Supine</label><input><label>BP Supine</label><input><span>/</span><input>
+          <label>Pulse Sitting</label><input><label>BP Sitting</label><input><span>/</span><input>
+          <label>Pulse Standing</label><input><label>BP Standing</label><input><span>/</span><input>
+          <label>Pulse Standing After 3 Minutes</label><input><label>BP Standing After 3 Minutes</label><input><span>/</span><input>
+        </div>
+        <label class="comment-label">Comments</label><textarea></textarea>
+        <header class="section-title short">Additional Measurements</header>
+        <div class="measurement-grid">
+          <label>Head Circumference</label><input><span>cm</span>
+          <label>Neck Circumference</label><input><span>cm</span>
+          <label>Upper Arm, Left Circumference</label><input><span>cm</span>
+          <label>Upper Arm, Right Circumference</label><input><span>cm</span>
+          <label>Lower Arm, Left Circumference</label><input><span>cm</span>
+          <label>Lower Arm, Right Circumference</label><input><span>cm</span>
+        </div>
+      </section>
+
+      <section class="screen" id="allergies">
+        <header class="section-title">Allergies</header>
+        <div class="toolbar">
+          <button>Mark All as Reviewed</button>
+          <button>+ Add</button>
+          <button>Modify</button>
+          <label><input type="radio"> No Known Allergies</label>
+          <label><input type="radio"> No Known Medication Allergies</label>
+          <button>Reverse Allergy Check</button>
+          <label class="right-align">Filter by Status <select><option>All</option><option>Active</option></select></label>
+        </div>
+        <table class="data-table">
+          <thead><tr><th>Terminology</th><th>Substance</th><th>Category</th><th>Reactions</th><th>Severity</th><th>Type</th><th>Status</th><th>Updated By</th><th>Source</th><th>Reviewed</th></tr></thead>
+          <tbody>
+            <tr><td>Allergy</td><td><strong>No Known Environmental Allergies</strong></td><td>Environmental</td><td></td><td></td><td>Allergy</td><td>Active</td><td>Demo User</td><td>Patient</td><td>2026/06/03</td></tr>
+            <tr><td>Allergy</td><td><strong>No Known Food Allergies</strong></td><td>Food</td><td></td><td></td><td>Allergy</td><td>Active</td><td>Demo User</td><td>Patient</td><td>2026/06/03</td></tr>
+            <tr><td>Cerner</td><td><strong>No Known Medication Allergies</strong></td><td>Drug</td><td></td><td></td><td>Allergy</td><td>Active</td><td>Demo User</td><td>Patient</td><td>2026/06/03</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="screen" id="medications">
+        <header class="section-title">Medication List</header>
+        <div class="alert-banner">Please be aware that this list contains both documented and discontinued medication.<br>To see only active medication please use “Document Medication by Hx” tab.</div>
+        <div class="toolbar med-toolbar"><button>+ Add</button><button>Document Medication by Hx</button><button>Reconciliation</button><button>Check Interactions</button><span class="right-align">Reconciliation Status: ● Meds History&nbsp;&nbsp; ● Admission&nbsp;&nbsp; ● Outpatient</span></div>
+        <div class="split-view">
+          <aside class="tree-panel">
+            <strong>Orders for Signature</strong>
+            <label><input type="checkbox"> Admission</label>
+            <label><input type="checkbox"> Resuscitation Status</label>
+            <label><input type="checkbox"> Alerts</label>
+            <label><input type="checkbox" checked> Medications</label>
+            <label><input type="checkbox"> Laboratory</label>
+            <label><input type="checkbox"> Diagnostic Imaging</label>
+            <label><input type="checkbox"> Discharge Planning</label>
+          </aside>
+          <table class="data-table medication-table">
+            <thead><tr><th></th><th>Order Name</th><th>Status</th><th>Dose</th><th>Details</th></tr></thead>
+            <tbody>
+              <tr><td>✓</td><td>bisoprolol</td><td>Prescribed</td><td>1 tab</td><td>ORAL, daily, mock outpatient prescription</td></tr>
+              <tr><td>✓</td><td>empagliflozin</td><td>Prescribed</td><td>1 tab</td><td>ORAL, with supper, mock prescription details</td></tr>
+              <tr><td>✓</td><td>valsartan</td><td>Prescribed</td><td>1 tab</td><td>ORAL, BID, mock blister pack instructions</td></tr>
+              <tr><td>✓</td><td>apixaban</td><td>Prescribed</td><td>1 tab</td><td>ORAL, BID, mock refill information</td></tr>
+              <tr><td>✓</td><td>rosuvastatin</td><td>Prescribed</td><td>1 tab</td><td>ORAL, daily, mock dispense instructions</td></tr>
+              <tr><td>✓</td><td>metformin</td><td>Prescribed</td><td>1 tab</td><td>ORAL, BID, mock pharmacy instruction</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="screen" id="pharmacy">
+        <header class="section-title">Community Pharmacy Information</header>
+        <div class="form-row"><label>Pharmacy Name/Location</label><input class="wide-input" value="Demo Pharmacy - Main Street"></div>
+        <div class="form-row"><label>Phone Number</label><input value="000-000-0000"></div>
+        <div class="form-row"><label>Fax Number</label><input value="000-000-0001"></div>
+        <div class="form-row"><label>Secondary Pharmacy Name/Location</label><input class="wide-input"></div>
+        <div class="form-row"><label>Secondary Pharmacy Phone Number</label><input></div>
+        <header class="section-title short">Medication Management</header>
+        <div class="option-row"><label>Medication Management</label><label><input type="radio" name="medmgmt" checked> Independent</label><label><input type="radio" name="medmgmt"> Dependent</label><label><input type="radio" name="medmgmt"> Other</label></div>
+        <div class="option-row"><label>Compliance Packaging</label><label><input type="checkbox"> None</label><label><input type="checkbox" checked> Blister Pack</label><label><input type="checkbox"> Dosette</label><label><input type="checkbox"> Other</label></div>
+        <div class="form-row"><label>Comment</label><textarea>Drug coverage: mock entry</textarea></div>
+      </section>
+      <section class="screen" id="history">
+        <header class="section-title">History</header>
+        <div class="blank-screen"></div>
+      </section>
+
+      <section class="screen" id="exercise">
+        <header class="section-title">Exercise</header>
+        <div class="blank-screen"></div>
+      </section>
+      <section class="screen" id="phq4-screening">
+        <header class="section-title">PHQ4 Screening Tool</header>
+        <div class="blank-screen"></div>
+      </section>
+
+      <section class="screen" id="morse-falls-risk">
+        <header class="section-title">Falls Risk Assessment - Morse Scale</header>
+        <div class="blank-screen"></div>
+      </section>
+
+      <section class="screen" id="smoking-assessment">
+        <header class="section-title">Smoking Assessment/Cessation</header>
+        <div class="blank-screen"></div>
+      </section>
+
+
+
+
+
+      <section class="screen" id="general">
+        <header class="section-title">General Information</header>
+        <div class="form-row"><label>Chief Complaint</label><input class="wide-input"></div>
+        <div class="checkbox-panel">
+          <label>Information Given By</label>
+          <label><input type="checkbox"> Unable to obtain</label><label><input type="checkbox"> Self</label><label><input type="checkbox"> Spouse</label><label><input type="checkbox"> Daughter</label><label><input type="checkbox"> Son</label><label><input type="checkbox"> Family member</label><label><input type="checkbox"> Friend</label><label><input type="checkbox"> Other</label>
+        </div>
+        <div class="form-row"><label>Reason Information Not Obtained</label><input class="wide-input"></div>
+        <div class="checkbox-panel language-panel">
+          <label>Primary Language</label>
+          <label><input type="checkbox" checked> English</label><label><input type="checkbox"> French</label><label><input type="checkbox"> Arabic</label><label><input type="checkbox"> Cantonese</label><label><input type="checkbox"> Dutch</label><label><input type="checkbox"> German</label><label><input type="checkbox"> Greek</label><label><input type="checkbox"> Italian</label><label><input type="checkbox"> Mandarin</label><label><input type="checkbox"> Spanish</label><label><input type="checkbox"> Other</label>
+        </div>
+        <div class="form-row"><label>Interpreter Information</label><input class="wide-input"></div>
+        <div class="option-row"><label>Preferred Mode of Communication</label><label><input type="radio" name="comm"> Verbal</label><label><input type="radio" name="comm"> Sign language</label><label><input type="radio" name="comm"> Written</label><label><input type="radio" name="comm"> Other</label></div>
+        <div class="form-row"><label>Communication Details</label><input class="wide-input"></div>
+      </section>
+
+      <section class="screen" id="language-communication">
+        <header class="section-title">Language and Communication</header>
+
+        <div class="form-row language-row">
+          <label>Language Most Comfortable Speaking</label>
+          <input class="wide-input" list="language-options" placeholder="Start typing to search language list">
+          <span class="field-note">search/drop-down</span>
+        </div>
+
+        <div class="form-row language-row">
+          <label>Preferred Language for Care Discussions</label>
+          <input class="wide-input" list="language-options" placeholder="Start typing to search language list">
+          <span class="field-note">search/drop-down</span>
+        </div>
+
+        <div class="form-row language-row">
+          <label>Preferred Language for Written Materials</label>
+          <input class="wide-input" list="language-options" placeholder="Start typing to search language list">
+          <span class="field-note">search/drop-down</span>
+        </div>
+
+        <datalist id="language-options">
+          <option value="English"></option>
+          <option value="French"></option>
+          <option value="American Sign Language (ASL)"></option>
+          <option value="Langue des signes québécoise (LSQ)"></option>
+          <option value="Arabic"></option>
+          <option value="Bengali"></option>
+          <option value="Cantonese"></option>
+          <option value="Dari"></option>
+          <option value="Farsi / Persian"></option>
+          <option value="German"></option>
+          <option value="Greek"></option>
+          <option value="Gujarati"></option>
+          <option value="Hindi"></option>
+          <option value="Italian"></option>
+          <option value="Korean"></option>
+          <option value="Mandarin"></option>
+          <option value="Polish"></option>
+          <option value="Portuguese"></option>
+          <option value="Punjabi"></option>
+          <option value="Russian"></option>
+          <option value="Somali"></option>
+          <option value="Spanish"></option>
+          <option value="Tagalog / Filipino"></option>
+          <option value="Tamil"></option>
+          <option value="Ukrainian"></option>
+          <option value="Urdu"></option>
+          <option value="Vietnamese"></option>
+          <option value="Another language, please specify"></option>
+          <option value="Do not know"></option>
+          <option value="Prefer not to answer"></option>
+          <option value="Another language—please specify"></option>
+        </datalist>
+
+        <div class="option-row language-option-row">
+          <label>Official Language Preference</label>
+          <label><input type="radio" name="official-language-preference" value="english"> English</label>
+          <label><input type="radio" name="official-language-preference" value="french"> French</label>
+          <label><input type="radio" name="official-language-preference" value="english-french"> English and French</label>
+          <label><input type="radio" name="official-language-preference" value="no-preference"> No preference</label>
+          <label><input type="radio" name="official-language-preference" value="prefer-not-to-answer"> Prefer not to answer</label>
+        </div>
+
+        <div class="option-row language-option-row">
+          <label>Interpreter Required</label>
+          <label><input type="radio" name="interpreter-required" value="yes"> Yes</label>
+          <label><input type="radio" name="interpreter-required" value="no"> No</label>
+          <label><input type="radio" name="interpreter-required" value="sometimes"> Sometimes</label>
+        </div>
+
+        <div class="form-row language-row conditional-field" data-conditional-group="interpreter-required" data-conditional-values="yes,sometimes" hidden>
+          <label>Interpreter Language</label>
+          <input class="wide-input" list="language-options" placeholder="Start typing to search language list">
+          <span class="field-note">shown when required</span>
+        </div>
+
+        <header class="section-title short">Communication Support Needs</header>
+        <div class="checkbox-panel communication-panel communication-supports">
+          <label>Communication Support Needs<br><small>(multi-select)</small></label>
+          <label><input type="checkbox" name="communication-support" value="spoken-interpreter"> Spoken interpreter</label>
+          <label><input type="checkbox" name="communication-support" value="american-sign-language"> American Sign Language</label>
+          <label><input type="checkbox" name="communication-support" value="quebec-sign-language"> Quebec Sign Language</label>
+          <label><input type="checkbox" name="communication-support" value="large-print"> Large print</label>
+          <label><input type="checkbox" name="communication-support" value="plain-language-materials"> Plain-language materials</label>
+          <label><input type="checkbox" name="communication-support" value="support-person-requested"> Support person requested</label>
+          <label><input type="checkbox" name="communication-support" value="other"> Other</label>
+        </div>
+
+        <div class="form-row language-row conditional-field" data-conditional-group="communication-support" data-conditional-values="other" hidden>
+          <label>Other Communication Support<br><small>Please specify</small></label>
+          <input class="wide-input" placeholder="Free text">
+        </div>
+
+        <div class="form-row">
+          <label>Communication Supports / Actions<br><small>Optional — document relevant supports, preferences, or follow-up.</small></label>
+          <textarea class="long-text" placeholder="Free text"></textarea>
+        </div>
+      </section>
+
+      <section class="screen active" id="referral-intake">
+        <header class="section-title">CR Referral / Booking</header>
+
+        <div class="cr-referral-simple-layout">
+          <div class="cr-panel referral-dates-panel">
+            <div class="cr-panel-title">Referral Dates</div>
+
+            <div class="referral-date-table">
+              <div></div>
+              <div class="date-headings">
+                <span>Year</span>
+                <span>Month</span>
+                <span>Day</span>
+              </div>
+
+              <label>Receipt Date <span class="required-star">★</span></label>
+              <div class="date-box-group">
+                <input class="date-year" placeholder="YYYY" maxlength="4">
+                <input class="date-month" placeholder="MMM" maxlength="3">
+                <input class="date-day" placeholder="DD" maxlength="2">
+              </div>
+
+              <label>Actual Date <span class="required-star">★</span></label>
+              <div class="date-box-group">
+                <input class="date-year" placeholder="YYYY" maxlength="4">
+                <input class="date-month" placeholder="MMM" maxlength="3">
+                <input class="date-day" placeholder="DD" maxlength="2">
+              </div>
+
+              <label>Enrollment Date <span class="required-star">★</span></label>
+              <div class="date-box-group">
+                <input class="date-year" placeholder="YYYY" maxlength="4">
+                <input class="date-month" placeholder="MMM" maxlength="3">
+                <input class="date-day" placeholder="DD" maxlength="2">
+              </div>
+            </div>
+          </div>
+
+          <div class="cr-panel physicians-simple-panel">
+            <div class="cr-panel-title">Physicians</div>
+
+            <div class="referral-form-row">
+              <label>Referring</label>
+              <input class="wide-input" placeholder="Free text">
+            </div>
+
+            <div class="referral-form-row">
+              <label>Family</label>
+              <input class="wide-input" placeholder="Free text">
+            </div>
+
+            <div class="referral-form-row">
+              <label>Other</label>
+              <input class="wide-input" placeholder="Free text">
+            </div>
+          </div>
+
+          <div class="cr-panel clinician-type-panel">
+            <div class="cr-panel-title">Referring Clinician Type</div>
+            <div class="cr-choice-stack referral-choice-stack">
+              <label><input type="radio" name="clinician-type"> advanced practice nurse</label>
+              <label><input type="radio" name="clinician-type"> cardiologist</label>
+              <label><input type="radio" name="clinician-type"> cardiac surgeon</label>
+              <label><input type="radio" name="clinician-type"> cardiology resident</label>
+              <label><input type="radio" name="clinician-type"> family physician</label>
+              <label><input type="radio" name="clinician-type"> internist</label>
+              <label><input type="radio" name="clinician-type"> neurologist</label>
+              <label><input type="radio" name="clinician-type"> vascular surgeon</label>
+              <label><input type="radio" name="clinician-type"> other health professional</label>
+              <label><input type="radio" name="clinician-type"> other</label>
+              <label><input type="radio" name="clinician-type"> unknown</label>
+            </div>
+          </div>
+
+          <div class="cr-panel point-referral-panel">
+            <div class="cr-panel-title">Point of Referral</div>
+            <div class="cr-choice-stack referral-choice-stack">
+              <label><input type="radio" name="point-referral"> cardiac diagnostics/intervention</label>
+              <label><input type="radio" name="point-referral"> cardiology clinic</label>
+              <label><input type="radio" name="point-referral"> cardiology unit</label>
+              <label><input type="radio" name="point-referral"> cardio-oncology clinic</label>
+              <label><input type="radio" name="point-referral"> complex wounds clinic</label>
+              <label><input type="radio" name="point-referral"> diabetic clinic</label>
+              <label><input type="radio" name="point-referral"> emergency room</label>
+              <label><input type="radio" name="point-referral"> family medicine group</label>
+              <label><input type="radio" name="point-referral"> HF clinic</label>
+              <label><input type="radio" name="point-referral"> inpatient unit</label>
+              <label><input type="radio" name="point-referral"> medical day clinic</label>
+              <label><input type="radio" name="point-referral"> neurology clinic</label>
+              <label><input type="radio" name="point-referral"> neurovascular unit</label>
+              <label><input type="radio" name="point-referral"> outpatient clinic</label>
+              <label><input type="radio" name="point-referral"> physician office</label>
+              <label><input type="radio" name="point-referral"> stroke prevention clinic</label>
+              <label><input type="radio" name="point-referral"> stroke rehab</label>
+              <label><input type="radio" name="point-referral"> self-referral</label>
+              <label><input type="radio" name="point-referral"> vascular clinic</label>
+              <label><input type="radio" name="point-referral"> vascular surgery unit</label>
+              <label><input type="radio" name="point-referral"> other</label>
+              <label><input type="radio" name="point-referral"> unknown</label>
+            </div>
+
+            <div class="referral-form-row hospital-row">
+              <label>Hospital</label>
+              <input class="wide-input" placeholder="Free text">
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="screen" id="intake-demographics">
+        <header class="section-title">CR Intake Profile</header>
+        <div class="blank-screen"></div>
+      </section>
+
+
+
+      <section class="screen" id="sociodemographic">
+        <header class="section-title">Sociodemographic Information</header>
+        <div class="option-row"><label>Born in Canada</label><label><input type="radio" name="born"> Yes</label><label><input type="radio" name="born"> No</label><label><input type="radio" name="born"> Do not know</label></div>
+        <div class="form-row"><label>Year Arrived in Canada</label><input></div>
+        <div class="side-by-side">
+          <div class="checkbox-panel tall">
+            <label>Identifies as Indigenous?</label>
+            <label><input type="checkbox"> Yes, First Nations</label>
+            <label><input type="checkbox"> Yes, Inuk/Inuit</label>
+            <label><input type="checkbox"> Yes, Métis</label>
+            <label><input type="checkbox"> No</label>
+            <label><input type="checkbox"> Do not know</label>
+            <label><input type="checkbox"> Prefer not to answer</label>
+            <label><input type="checkbox"> Prefer to identify as other Nation</label>
+            <label><input type="checkbox"> Other</label>
+          </div>
+          <div class="checkbox-panel tall">
+            <label>Racialized Group</label>
+            <label><input type="checkbox"> Black</label><label><input type="checkbox"> East Asian</label><label><input type="checkbox"> Latin American</label><label><input type="checkbox"> Middle Eastern</label><label><input type="checkbox"> South Asian</label><label><input type="checkbox"> Southeast Asian</label><label><input type="checkbox"> White</label><label><input type="checkbox"> Do not know</label><label><input type="checkbox"> Prefer not to answer</label><label><input type="checkbox"> Other</label>
+          </div>
+          <aside class="examples"><strong>Examples of various race categories:</strong><br>Black, East Asian, Latin American, Middle Eastern, South Asian, Southeast Asian, White.</aside>
+        </div>
+      </section>
+
+      <section class="screen" id="functional">
+        <header class="section-title">Functional</header>
+        <div class="checkbox-panel horizontal"><label>Living Situation</label><label><input type="radio" name="living"> Home Independently</label><label><input type="radio" name="living"> Home with Family Care</label><label><input type="radio" name="living"> Assisted living</label><label><input type="radio" name="living"> Hospital</label><label><input type="radio" name="living"> No fixed address/Shelter</label><label><input type="radio" name="living"> Retirement home</label><label><input type="radio" name="living"> Other</label></div>
+        <div class="checkbox-panel horizontal"><label>Lives With</label><label><input type="checkbox"> Alone</label><label><input type="checkbox"> Children</label><label><input type="checkbox"> Father</label><label><input type="checkbox"> Mother</label><label><input type="checkbox"> Roommate</label><label><input type="checkbox"> Spouse</label><label><input type="checkbox"> Significant Other</label><label><input type="checkbox"> Other</label></div>
+        <div class="option-row"><label>Hand Dominance</label><label><input type="radio" name="hand"> Left</label><label><input type="radio" name="hand"> Right</label><label><input type="radio" name="hand"> Ambidextrous</label></div>
+        <div class="checkbox-panel devices">
+          <label>Devices/Treatments Used at Home</label>
+          <label><input type="checkbox"> None</label><label><input type="checkbox"> Adaptive equipment</label><label><input type="checkbox"> Apnea monitoring</label><label><input type="checkbox"> Blood pressure monitor</label><label><input type="checkbox"> Cane</label><label><input type="checkbox"> CPAP device</label><label><input type="checkbox"> Crutches</label><label><input type="checkbox"> Oxygen</label><label><input type="checkbox"> Walker</label><label><input type="checkbox"> Wheelchair</label><label><input type="checkbox"> Other</label>
+        </div>
+        <div class="form-row"><label>Details</label><input class="wide-input"></div>
+        <div class="checkbox-panel devices">
+          <label>Professional Services Used at Home</label>
+          <label><input type="checkbox"> None</label><label><input type="checkbox"> Dietitian</label><label><input type="checkbox"> Nursing</label><label><input type="checkbox"> Occupational therapist</label><label><input type="checkbox"> Physiotherapist</label><label><input type="checkbox"> Respiratory Therapy</label><label><input type="checkbox"> Social Work</label><label><input type="checkbox"> Speech Language Pathologist</label><label><input type="checkbox"> Personal Support Worker</label><label><input type="checkbox"> Other</label>
+        </div>
+      </section>
+
+      <section class="screen" id="subjective">
+        <header class="section-title">Subjective</header>
+        <div class="option-row"><label>Pain Present</label><label><input type="radio" name="pain-present" checked> No actual or suspected pain</label><label><input type="radio" name="pain-present"> Yes actual or suspected pain</label></div>
+        <div class="checkbox-panel symptoms"><label>General Symptoms</label><label><input type="checkbox"> None</label><label><input type="checkbox"> Anorexia</label><label><input type="checkbox"> Chills</label><label><input type="checkbox"> Confusion/Disorientation</label><label><input type="checkbox"> Dizziness</label><label><input type="checkbox"> Edema</label><label><input type="checkbox"> Fatigue</label><label><input type="checkbox"> Heartburn</label><label><input type="checkbox"> Nausea</label><label><input type="checkbox"> Pain</label><label><input type="checkbox"> Weakness</label><label><input type="checkbox"> Other</label></div>
+        <div class="checkbox-panel symptoms"><label>Respiratory Symptoms</label><label><input type="checkbox"> None</label><label><input type="checkbox"> Cough</label><label><input type="checkbox"> Shortness of breath</label><label><input type="checkbox"> Wheezing</label><label><input type="checkbox"> Runny nose</label><label><input type="checkbox"> Sore throat</label><label><input type="checkbox"> Hemoptysis</label><label><input type="checkbox"> Other</label></div>
+        <div class="checkbox-panel symptoms"><label>Cardiovascular Symptoms</label><label><input type="checkbox"> None</label><label><input type="checkbox"> Chest pain/pressure at rest</label><label><input type="checkbox"> Chest pain/pressure with activity</label><label><input type="checkbox"> Claudication</label><label><input type="checkbox"> Diaphoresis</label><label><input type="checkbox"> Dizziness</label><label><input type="checkbox"> Palpitations</label><label><input type="checkbox"> Syncope</label><label><input type="checkbox"> Tachycardia</label><label><input type="checkbox"> Other</label></div>
+      </section>
+
+      <section class="screen" id="pain-history">
+        <header class="pain-title">Pain History</header>
+        <p class="blue-note">Patients who are unable to self report due to age or altered mental status must have a knowledgeable informant complete the assessment of all indicators except pain quality.</p>
+        <h3>Pain Description History</h3>
+        <table class="data-table pain-table">
+          <thead><tr><th></th><th>Pain Location</th><th>Pain Quality</th><th>Pain Pattern</th><th>Pain Onset</th><th>Pain Duration</th><th>Pain Negatively Impacts</th><th>Pain Score</th><th>Comment</th></tr></thead>
+          <tbody>
+            <tr><th>Pain Site #1</th><td></td><td>&lt;MultiAlpha&gt;</td><td>&lt;Alpha&gt;</td><td>&lt;Alpha&gt;</td><td></td><td>&lt;MultiAlpha&gt;</td><td></td><td></td></tr>
+            <tr><th>Pain Site #2</th><td></td><td>&lt;MultiAlpha&gt;</td><td>&lt;Alpha&gt;</td><td>&lt;Alpha&gt;</td><td></td><td>&lt;MultiAlpha&gt;</td><td></td><td></td></tr>
+            <tr><th>Pain Site #3</th><td></td><td>&lt;MultiAlpha&gt;</td><td>&lt;Alpha&gt;</td><td>&lt;Alpha&gt;</td><td></td><td>&lt;MultiAlpha&gt;</td><td></td><td></td></tr>
+          </tbody>
+        </table>
+        <div class="pain-factor-grid">
+          <div class="check-box-list"><h3>Associated Symptoms</h3><label><input type="checkbox"> None</label><label><input type="checkbox"> Nausea</label><label><input type="checkbox"> Palpitations</label><label><input type="checkbox"> Shortness of breath</label><label><input type="checkbox"> Sweating</label><label><input type="checkbox"> Vomiting</label><label><input type="checkbox"> Other</label></div>
+          <div class="check-box-list"><h3>Aggravating Factors</h3><label><input type="checkbox"> Eating</label><label><input type="checkbox"> Activity</label><label><input type="checkbox"> Deep breathing</label><label><input type="checkbox"> Exercise</label><label><input type="checkbox"> Movement</label><label><input type="checkbox"> Stress</label><label><input type="checkbox"> Touch</label><label><input type="checkbox"> Other</label></div>
+          <div class="check-box-list"><h3>Alleviating Factors</h3><label><input type="checkbox"> None</label><label><input type="checkbox"> Compression</label><label><input type="checkbox"> Deep breathing</label><label><input type="checkbox"> Medication, opioid</label><label><input type="checkbox"> Repositioning</label><label><input type="checkbox"> Rest</label><label><input type="checkbox"> Other</label></div>
+        </div>
+      </section>
+
+      <section class="screen" id="faces">
+        <header class="section-title">Pain Scale FACES</header>
+        <div class="faces-scale"><label><input type="radio" name="faces" checked> 10 = Hurts worst</label><label><input type="radio" name="faces"> 8 = Hurts whole lot</label><label><input type="radio" name="faces"> 6 = Hurts even more</label><label><input type="radio" name="faces"> 4 = Hurts little more</label><label><input type="radio" name="faces"> 2 = Hurts little bit</label><label><input type="radio" name="faces"> 0 = No hurt</label></div>
+        <div class="form-row"><label>FACES Pain Score</label><input></div>
+      </section>
+
+      <section class="screen" id="flacc">
+        <header class="section-title">FLACC Pain Scale</header>
+        <div class="scale-grid">
+          <label>Face</label><div><label><input type="radio" name="flacc-face"> No particular expression or smile</label><label><input type="radio" name="flacc-face"> Occasional grimace, frown, withdrawn, disinterested</label><label><input type="radio" name="flacc-face"> Frequent to constant quivering chin, clenched jaw</label></div>
+          <label>Legs</label><div><label><input type="radio" name="flacc-legs"> Normal position or relaxed</label><label><input type="radio" name="flacc-legs"> Uneasy, restless, tense</label><label><input type="radio" name="flacc-legs"> Kicking or legs drawn up</label></div>
+          <label>Activity</label><div><label><input type="radio" name="flacc-act"> Lying quietly, normal position, moves easily</label><label><input type="radio" name="flacc-act"> Squirming, shifting back and forth, tense</label><label><input type="radio" name="flacc-act"> Arched, rigid or jerking</label></div>
+          <label>Cry</label><div><label><input type="radio" name="flacc-cry"> No cry, awake or asleep</label><label><input type="radio" name="flacc-cry"> Moans, whimpers, occasional complaint</label><label><input type="radio" name="flacc-cry"> Crying steadily, screams, sobs, frequent complaints</label></div>
+          <label>Consolability</label><div><label><input type="radio" name="flacc-con"> Content, relaxed</label><label><input type="radio" name="flacc-con"> Reassured by occasional touching, hugging or being talked to</label><label><input type="radio" name="flacc-con"> Difficult to console or comfort</label></div>
+        </div>
+        <div class="form-row"><label>FLACC Score</label><input></div>
+      </section>
+
+      <section class="screen" id="rflacc">
+        <header class="section-title">r-FLACC Pain Scale</header>
+        <div class="scale-grid wide-scale">
+          <label>Face</label><div><label><input type="radio" name="r-face" checked> No particular expression or smile</label><label><input type="radio" name="r-face"> Occasional grimace or frown, withdrawn, disinterested, sad, worried</label><label><input type="radio" name="r-face"> Quivering chin, clenched jaw, distressed face, fright/panic</label></div>
+          <label>Legs</label><div><label><input type="radio" name="r-legs"> Normal position or relaxed, usual tone and motion to limbs</label><label><input type="radio" name="r-legs"> Uneasy, restless, tense, occasional tremors</label><label><input type="radio" name="r-legs"> Kicking or legs drawn up, increased spasticity, tremors, jerking</label></div>
+          <label>Activity</label><div><label><input type="radio" name="r-act"> Lying quietly, normal position, moves easily, rhythmic respirations</label><label><input type="radio" name="r-act"> Squirming, tense, guarded movement, agitated, shallow respirations</label><label><input type="radio" name="r-act"> Arched, jerking, head banging, shivering, breath holding, gasping</label></div>
+          <label>Cry</label><div><label><input type="radio" name="r-cry"> No cry, awake or asleep</label><label><input type="radio" name="r-cry"> Moans or whimpers, occasional complaint, outburst, grunting</label><label><input type="radio" name="r-cry"> Crying, screams, sobs, frequent complaints, repeated outburst</label></div>
+          <label>Consolability</label><div><label><input type="radio" name="r-con"> Content, relaxed</label><label><input type="radio" name="r-con"> Reassured by occasional touching, hugging or being talked to, distractible</label><label><input type="radio" name="r-con"> Difficult to console, pushing away, resisting comfort measures</label></div>
+        </div>
+        <div class="form-row"><label>r-FLACC Pain Score</label><input></div>
+        <p class="footnote"><strong>(REVISED) FLACC Scale SCORING</strong><br>Additional indicators/responses have been added for cognitively impaired children.</p>
+      </section>
+
+      <section class="screen placeholder" id="painad"><header class="section-title">PAINAD Scale</header><p>This mockup screen is a placeholder. Use the left menu to continue navigating.</p></section>
+      <section class="screen placeholder" id="pdqs"><header class="section-title">PDQ-S Score</header><p>This mockup screen is a placeholder. Use the left menu to continue navigating.</p></section>
+      <section class="screen placeholder" id="analysis"><header class="section-title">Analysis and Plan</header><textarea class="analysis-box" placeholder="Mock plan text area"></textarea></section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

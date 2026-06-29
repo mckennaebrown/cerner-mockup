@@ -1,0 +1,1335 @@
+:root {
+  --teal: #0b6d7b;
+  --teal-light: #c0e2e2;
+  --teal-mid: #9bcfd0;
+  --sidebar: #cbd9e6;
+  --sidebar-active: #0878d6;
+  --border: #7f8b8f;
+  --grid: #c9cdd0;
+  --text: #111;
+  --pink: #ffb7b7;
+  --yellow: #fff7a8;
+  --blue-title: #55a5f5;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #f2f2f2;
+  color: var(--text);
+  font-family: "Courier New", Consolas, monospace;
+  font-size: 14px;
+}
+
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 146px;
+  min-width: 146px;
+  background: var(--sidebar);
+  border-right: 2px solid #aab6c0;
+  overflow-y: auto;
+}
+
+.nav-item {
+  display: block;
+  width: 100%;
+  min-height: 31px;
+  padding: 6px 8px;
+  border: 0;
+  border-bottom: 1px solid #b6c3ce;
+  background: transparent;
+  color: #07111a;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+}
+
+.nav-item:hover,
+.nav-item:focus-visible {
+  background: #b5ccdf;
+  outline: 1px dashed #325b86;
+  outline-offset: -3px;
+}
+
+.nav-item.active {
+  background: var(--sidebar-active);
+  color: white;
+}
+
+.nav-item.starred::before {
+  content: "* ";
+  color: red;
+  font-weight: bold;
+}
+
+.workspace {
+  flex: 1;
+  min-width: 900px;
+  padding: 8px 14px 28px;
+  overflow: auto;
+  background: #f7f7f7;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 38px;
+  margin-bottom: 5px;
+}
+
+.topbar input,
+select,
+input,
+textarea {
+  border: 1px solid var(--border);
+  background: white;
+  min-height: 26px;
+  font: inherit;
+  padding: 3px 5px;
+}
+
+textarea { resize: vertical; min-height: 48px; }
+
+.mini-button,
+.toolbar button {
+  border: 1px solid #999;
+  background: #e9e9e9;
+  padding: 5px 12px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.screen {
+  display: none;
+  max-width: 1600px;
+}
+
+.screen.active { display: block; }
+
+.section-title {
+  background: var(--teal);
+  color: white;
+  height: 42px;
+  line-height: 42px;
+  text-align: center;
+  font-size: 22px;
+  letter-spacing: 1px;
+  margin: 0 0 8px;
+  max-width: 1340px;
+}
+
+.section-title.short { margin-top: 10px; }
+
+.pain-title {
+  background: var(--blue-title);
+  color: white;
+  font-size: 24px;
+  height: 42px;
+  line-height: 42px;
+  padding-left: 8px;
+  margin: 0 0 10px;
+  max-width: 1350px;
+}
+
+.grid.two-column {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 35px;
+  align-items: start;
+}
+
+.form-row,
+.vital-row,
+.option-row {
+  display: flex;
+  align-items: stretch;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.form-row > label:first-child,
+.vital-row > label:first-child,
+.option-row > label:first-child,
+.range-block > label,
+.bp-grid > label,
+.orthostatic-grid label,
+.measurement-grid label,
+.checkbox-panel > label:first-child,
+.scale-grid > label {
+  background: var(--teal-light);
+  min-width: 160px;
+  min-height: 34px;
+  padding: 6px 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-row input { width: 160px; }
+.form-row textarea { width: 520px; }
+.compact input { width: 112px; }
+.wide-input { width: 650px !important; }
+.unit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 35px;
+  color: #666;
+}
+
+.calculation-panel {
+  max-width: 640px;
+  line-height: 1.55;
+}
+
+.calc-pair {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin: 14px 0 22px;
+}
+
+.calc-pair label {
+  background: #d4d4d4;
+  min-width: 112px;
+  min-height: 28px;
+  padding: 4px 12px;
+  text-align: center;
+}
+
+.calc-pair input { width: 125px; }
+.note { max-width: 380px; margin-left: 290px; }
+
+.range-block {
+  display: grid;
+  grid-template-columns: 310px 130px 30px 130px 1fr;
+  gap: 6px;
+  align-items: center;
+  margin: 8px 0 14px;
+  max-width: 900px;
+}
+.range-block label { background: #d3d3d3; }
+.range-block input { width: 130px; }
+
+.warning-block {
+  display: flex;
+  align-items: stretch;
+  gap: 6px;
+  margin: 8px 0 8px;
+}
+.warning {
+  width: 370px;
+  background: var(--pink);
+  padding: 10px;
+  text-align: center;
+  line-height: 1.4;
+  font-weight: bold;
+}
+.warning-block label {
+  background: var(--yellow);
+  min-width: 145px;
+  padding: 10px;
+  text-align: center;
+}
+.warning-block input { width: 150px; }
+
+.vital-row label:not(:first-child) {
+  background: var(--teal-light);
+  padding: 7px 10px;
+}
+.vital-row input { width: 115px; }
+.option-row {
+  border: 1px solid var(--border);
+  max-width: 1040px;
+  padding: 0;
+}
+.option-row label:not(:first-child) {
+  padding: 8px 12px;
+}
+
+hr {
+  border: 0;
+  height: 12px;
+  background: #c2c6c7;
+  max-width: 1340px;
+  margin: 8px 0;
+}
+
+.bp-grid,
+.orthostatic-grid,
+.measurement-grid {
+  display: grid;
+  gap: 6px;
+  align-items: stretch;
+  max-width: 1260px;
+  margin-bottom: 8px;
+}
+
+.bp-grid {
+  grid-template-columns: 170px 170px 120px 20px 120px 170px 120px 20px 120px;
+}
+.bp-grid > label { grid-row: span 2; }
+.bp-grid span,
+.orthostatic-grid span,
+.measurement-grid span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bp-grid input { width: 120px; }
+
+.orthostatic-grid {
+  grid-template-columns: 170px 120px 170px 120px 20px 120px;
+  max-width: 800px;
+}
+.orthostatic-grid input { width: 120px; }
+.comment-label { display: block; width: 170px; background: var(--teal-light); padding: 8px 10px; text-align: center; }
+#additional-vitals textarea { width: 620px; }
+
+.measurement-grid {
+  grid-template-columns: 190px 120px 35px 190px 120px 35px;
+  max-width: 700px;
+}
+.measurement-grid input { width: 120px; }
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 8px 18px;
+  max-width: 1480px;
+}
+.toolbar label { display: inline-flex; align-items: center; gap: 4px; }
+.right-align { margin-left: auto; }
+
+.data-table {
+  width: 100%;
+  max-width: 1480px;
+  border-collapse: collapse;
+  background: white;
+  border: 1px solid var(--border);
+}
+.data-table th,
+.data-table td {
+  border: 1px solid var(--grid);
+  padding: 6px 8px;
+  text-align: left;
+  vertical-align: top;
+}
+.data-table thead th {
+  background: #f2f2f2;
+  color: #333;
+}
+.data-table tbody tr:nth-child(even) { background: #e7eaf2; }
+
+.alert-banner {
+  background: var(--pink);
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  max-width: 1480px;
+}
+.med-toolbar {
+  background: #eeeeee;
+  padding: 10px;
+  margin: 0 0 8px;
+}
+.split-view {
+  display: grid;
+  grid-template-columns: 365px 1fr;
+  gap: 10px;
+  max-width: 1480px;
+}
+.tree-panel {
+  background: #d5dee3;
+  border: 1px solid var(--border);
+  padding: 10px 14px;
+}
+.tree-panel label {
+  display: block;
+  margin: 8px 0 0 18px;
+}
+.medication-table td:nth-child(2) { color: #337bda; }
+
+.checkbox-panel {
+  display: grid;
+  grid-template-columns: 170px repeat(4, minmax(130px, auto));
+  gap: 6px 14px;
+  border: 1px solid var(--border);
+  max-width: 1260px;
+  padding: 0 10px 10px 0;
+  margin-bottom: 8px;
+  background: white;
+}
+.checkbox-panel > label:first-child {
+  grid-row: 1 / span 4;
+  align-self: stretch;
+  min-height: 72px;
+}
+.checkbox-panel label:not(:first-child) {
+  padding-top: 8px;
+}
+.language-panel { grid-template-columns: 170px repeat(4, minmax(120px, auto)); }
+
+.side-by-side {
+  display: flex;
+  gap: 26px;
+  align-items: flex-start;
+}
+.checkbox-panel.tall {
+  grid-template-columns: 195px 220px 230px;
+  max-width: 680px;
+}
+.checkbox-panel.tall > label:first-child { grid-row: 1 / span 5; }
+.examples { line-height: 1.65; margin-top: 90px; max-width: 560px; }
+.horizontal {
+  grid-template-columns: 170px repeat(6, minmax(150px, auto));
+  max-width: 1360px;
+}
+.horizontal > label:first-child { grid-row: 1 / span 2; }
+.devices,
+.symptoms {
+  grid-template-columns: 170px repeat(4, minmax(190px, auto));
+  max-width: 1360px;
+}
+.devices > label:first-child,
+.symptoms > label:first-child { grid-row: 1 / span 6; }
+
+.blue-note { color: blue; font-weight: bold; max-width: 1350px; }
+.pain-table { max-width: 1250px; }
+.pain-table th:first-child { width: 150px; }
+.pain-factor-grid {
+  display: grid;
+  grid-template-columns: 520px 610px;
+  gap: 28px 40px;
+  align-items: start;
+}
+.check-box-list {
+  border: 1px solid var(--border);
+  background: white;
+  padding: 0 10px 10px;
+  min-height: 140px;
+}
+.check-box-list h3 { margin: -24px 0 10px -10px; padding-top: 30px; }
+.check-box-list label {
+  display: block;
+  margin: 7px 0;
+}
+
+.faces-scale {
+  border: 1px solid var(--border);
+  max-width: 740px;
+  margin-left: 360px;
+  padding: 10px 12px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px 18px;
+  background: white;
+}
+
+.scale-grid {
+  display: grid;
+  grid-template-columns: 180px 640px;
+  max-width: 820px;
+  border-bottom: 1px solid var(--border);
+}
+.scale-grid > label {
+  font-size: 28px;
+  text-align: left;
+  justify-content: flex-start;
+  padding-left: 16px;
+  border: 1px solid var(--border);
+  border-bottom: 0;
+}
+.scale-grid > div {
+  background: white;
+  border: 1px solid var(--border);
+  border-left: 0;
+  border-bottom: 0;
+  padding: 7px 10px;
+}
+.scale-grid label:not(:first-child) { display: block; margin: 7px 0; }
+.wide-scale { grid-template-columns: 290px 920px; max-width: 1210px; }
+.footnote { font-size: 18px; line-height: 1.4; }
+.analysis-box { width: 100%; max-width: 1200px; min-height: 250px; }
+.placeholder p { padding: 16px; background: white; border: 1px solid var(--border); max-width: 900px; }
+
+@media (max-width: 1050px) {
+  .app-shell { flex-direction: column; }
+  .sidebar { width: 100%; height: auto; display: flex; overflow-x: auto; }
+  .nav-item { width: auto; min-width: 140px; }
+  .workspace { min-width: 960px; }
+}
+
+
+/* Race, Ethnicity, and Indigenous Identity */
+.race-panel {
+  max-width: 1120px;
+  padding-bottom: 12px;
+}
+
+.race-question-row {
+  display: grid;
+  grid-template-columns: 285px 1fr;
+  gap: 8px;
+  align-items: stretch;
+  margin: 8px 0;
+}
+
+.race-question-row > label {
+  background: var(--teal-light);
+  min-height: 112px;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.race-checkbox-grid {
+  border: 1px solid var(--border);
+  background: white;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  gap: 0;
+}
+
+.race-checkbox-grid label {
+  min-height: 34px;
+  padding: 8px 12px;
+  border-right: 1px solid var(--grid);
+  border-bottom: 1px solid var(--grid);
+}
+
+.race-checkbox-grid label:nth-child(2n) {
+  border-right: 0;
+}
+
+.race-other-option {
+  background: #f8f8f8;
+}
+
+
+/* Race examples beside each checkbox */
+.race-example-grid {
+  grid-template-columns: 1fr;
+}
+
+.race-example-grid label {
+  display: grid;
+  grid-template-columns: 22px 190px 1fr;
+  align-items: center;
+  column-gap: 8px;
+  border-right: 0;
+}
+
+.race-example-grid label:nth-child(2n) {
+  border-right: 0;
+}
+
+.race-example-grid input {
+  margin: 0;
+}
+
+.race-label {
+  font-weight: bold;
+}
+
+.race-example {
+  color: #333;
+  line-height: 1.35;
+}
+
+
+/* Ethnicity section */
+.ethnicity-panel {
+  max-width: 1320px;
+  padding-bottom: 12px;
+  margin-top: 14px;
+}
+
+.ethnicity-question-row {
+  grid-template-columns: 285px 1fr;
+}
+
+.ethnicity-fields {
+  border: 1px solid var(--border);
+  background: white;
+  padding: 8px;
+}
+
+.ethnicity-fields .form-row {
+  margin-bottom: 8px;
+}
+
+.ethnicity-fields .form-row > label:first-child {
+  min-width: 250px;
+}
+
+.ethnicity-option-row {
+  margin-top: 4px;
+  max-width: 760px;
+}
+
+.ethnicity-option-row > label:first-child {
+  min-width: 250px;
+}
+
+
+/* Indigenous Identity and participant-identified care actions */
+.indigenous-panel,
+.care-actions-panel {
+  max-width: 1320px;
+  padding-bottom: 12px;
+  margin-bottom: 14px;
+}
+
+.indigenous-question-row,
+.care-actions-question-row {
+  grid-template-columns: 285px 1fr;
+}
+
+.indigenous-checkbox-grid,
+.care-actions-content {
+  border: 1px solid var(--border);
+  background: white;
+  padding: 8px;
+}
+
+.indigenous-checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(230px, 1fr));
+  gap: 0;
+  padding: 0;
+}
+
+.indigenous-checkbox-grid label {
+  min-height: 34px;
+  padding: 8px 12px;
+  border-right: 1px solid var(--grid);
+  border-bottom: 1px solid var(--grid);
+}
+
+.indigenous-checkbox-grid label:nth-child(2n) {
+  border-right: 0;
+}
+
+.wide-textarea {
+  width: 650px !important;
+  min-height: 68px;
+}
+
+.care-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  border: 1px solid var(--grid);
+}
+
+.care-actions-grid label {
+  min-height: 34px;
+  padding: 8px 12px;
+  border-right: 1px solid var(--grid);
+  border-bottom: 1px solid var(--grid);
+}
+
+.care-actions-grid label:nth-child(2n) {
+  border-right: 0;
+}
+
+.care-action-notes {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.care-action-notes > label:first-child {
+  min-width: 210px;
+}
+
+
+/* Disability and Accessibility */
+.disability-panel {
+  max-width: 1320px;
+  padding-bottom: 12px;
+  margin-bottom: 14px;
+}
+
+.disability-question-row {
+  display: grid;
+  grid-template-columns: 285px 1fr;
+  gap: 8px;
+  align-items: stretch;
+  margin: 8px 0;
+}
+
+.disability-question-row > label {
+  background: var(--teal-light);
+  min-height: 86px;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.disability-checkbox-grid {
+  border: 1px solid var(--border);
+  background: white;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(310px, 1fr));
+  gap: 0;
+}
+
+.disability-checkbox-grid label {
+  min-height: 34px;
+  padding: 8px 12px;
+  border-right: 1px solid var(--grid);
+  border-bottom: 1px solid var(--grid);
+  line-height: 1.35;
+}
+
+.disability-checkbox-grid label:nth-child(2n) {
+  border-right: 0;
+}
+
+.compact-disability-grid {
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+}
+
+.disability-type-grid {
+  grid-template-columns: repeat(2, minmax(360px, 1fr));
+}
+
+.accessibility-grid {
+  grid-template-columns: repeat(2, minmax(320px, 1fr));
+}
+
+.disability-other-option {
+  background: #f8f8f8;
+}
+
+.option-example {
+  color: #333;
+}
+
+.disability-textarea {
+  width: 820px !important;
+  min-height: 88px;
+}
+
+
+/* Website title */
+.site-title {
+  background: #e8f0f0;
+  border: 1px solid var(--border);
+  color: #123c42;
+  font-size: 26px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  max-width: 1340px;
+  padding: 10px 14px;
+  margin: 0 0 8px;
+  text-align: center;
+}
+
+/* Geography, Transportation, and Digital Access */
+.geography-panel {
+  max-width: 1320px;
+  padding-bottom: 12px;
+  margin-bottom: 14px;
+}
+
+.geo-form-row,
+.geo-question-row {
+  display: grid;
+  grid-template-columns: 285px 1fr auto;
+  gap: 8px;
+  align-items: stretch;
+  margin: 8px 0;
+}
+
+.geo-question-row {
+  grid-template-columns: 285px 1fr;
+}
+
+.geo-form-row > label:first-child,
+.geo-question-row > label:first-child {
+  background: var(--teal-light);
+  min-height: 56px;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.geo-form-row > input {
+  max-width: 650px;
+}
+
+.inline-field-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border: 1px solid var(--border);
+  background: white;
+  padding: 8px;
+}
+
+.inline-field-group input {
+  width: 120px;
+}
+
+.geo-checkbox-grid {
+  border: 1px solid var(--border);
+  background: white;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(310px, 1fr));
+  gap: 0;
+}
+
+.geo-checkbox-grid label {
+  min-height: 34px;
+  padding: 8px 12px;
+  border-right: 1px solid var(--grid);
+  border-bottom: 1px solid var(--grid);
+  line-height: 1.35;
+}
+
+.geo-checkbox-grid label:nth-child(2n) {
+  border-right: 0;
+}
+
+.compact-geo-grid {
+  grid-template-columns: repeat(2, minmax(230px, 1fr));
+}
+
+.geo-textarea {
+  width: 820px !important;
+  min-height: 78px;
+}
+
+
+/* Sex, Gender, and Identity-Related Communication */
+.identity-panel {
+  max-width: 1320px;
+  padding-bottom: 12px;
+  margin-bottom: 14px;
+}
+
+.identity-form-row,
+.identity-question-row {
+  display: grid;
+  grid-template-columns: 285px 1fr;
+  gap: 8px;
+  align-items: stretch;
+  margin: 8px 0;
+}
+
+.identity-form-row > label:first-child,
+.identity-question-row > label:first-child {
+  background: var(--teal-light);
+  min-height: 56px;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.identity-form-row > input {
+  max-width: 650px;
+}
+
+.identity-checkbox-grid {
+  border: 1px solid var(--border);
+  background: white;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 0;
+}
+
+.identity-checkbox-grid label {
+  min-height: 34px;
+  padding: 8px 12px;
+  border-right: 1px solid var(--grid);
+  border-bottom: 1px solid var(--grid);
+  line-height: 1.35;
+}
+
+.identity-checkbox-grid label:nth-child(2n) {
+  border-right: 0;
+}
+
+.compact-identity-grid {
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+}
+
+
+/* Socioeconomic Needs and Additional Support */
+.socioeconomic-panel {
+  max-width: 1320px;
+  padding-bottom: 12px;
+  margin-bottom: 14px;
+}
+
+.socio-form-row,
+.socio-question-row {
+  display: grid;
+  grid-template-columns: 285px 1fr;
+  gap: 8px;
+  align-items: stretch;
+  margin: 8px 0;
+}
+
+.socio-form-row > label:first-child,
+.socio-question-row > label:first-child {
+  background: var(--teal-light);
+  min-height: 56px;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.socio-form-row > input {
+  max-width: 650px;
+}
+
+.socio-checkbox-grid {
+  border: 1px solid var(--border);
+  background: white;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(360px, 1fr));
+  gap: 0;
+}
+
+.socio-checkbox-grid label {
+  min-height: 34px;
+  padding: 8px 12px;
+  border-right: 1px solid var(--grid);
+  border-bottom: 1px solid var(--grid);
+  line-height: 1.35;
+}
+
+.socio-checkbox-grid label:nth-child(2n) {
+  border-right: 0;
+}
+
+.compact-socio-grid {
+  grid-template-columns: repeat(2, minmax(310px, 1fr));
+}
+
+.socio-textarea {
+  width: 820px !important;
+  min-height: 78px;
+}
+
+.work-return-row .inline-field-group {
+  max-width: 620px;
+}
+
+
+/* Updated CR Referral / Booking */
+.cr-referral-simple-layout {
+  display: grid;
+  grid-template-columns: minmax(360px, 460px) minmax(420px, 520px) minmax(420px, 560px);
+  gap: 14px;
+  align-items: start;
+  max-width: 1540px;
+}
+
+.referral-dates-panel,
+.physicians-simple-panel,
+.clinician-type-panel,
+.point-referral-panel {
+  padding-bottom: 12px;
+}
+
+.referral-dates-panel {
+  grid-column: 1;
+}
+
+.physicians-simple-panel {
+  grid-column: 1;
+}
+
+.clinician-type-panel {
+  grid-column: 1;
+}
+
+.point-referral-panel {
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 3;
+}
+
+.referral-form-row {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 8px;
+  align-items: stretch;
+  margin: 8px 0;
+}
+
+.referral-form-row > label:first-child {
+  background: var(--teal-light);
+  min-height: 34px;
+  padding: 7px 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.referral-form-row input {
+  max-width: 100%;
+}
+
+.referral-choice-stack {
+  border: 1px solid var(--border);
+  background: white;
+  padding: 7px 10px;
+}
+
+.referral-choice-stack label {
+  display: block;
+  min-height: 26px;
+  line-height: 1.4;
+  padding: 2px 0;
+}
+
+.hospital-row {
+  margin-top: 10px;
+}
+
+
+/* Cleaner Referral Dates date boxes */
+.referral-date-table {
+  display: grid;
+  grid-template-columns: 150px auto;
+  gap: 6px 8px;
+  align-items: center;
+  margin: 8px 0 2px;
+}
+
+.referral-date-table > label {
+  background: var(--teal-light);
+  min-height: 34px;
+  padding: 7px 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.date-headings,
+.date-box-group {
+  display: grid;
+  grid-template-columns: 92px 76px 64px;
+  gap: 5px;
+  align-items: center;
+}
+
+.date-headings span {
+  color: #555;
+  font-size: 12px;
+  text-align: center;
+  line-height: 1;
+}
+
+.date-box-group input {
+  height: 32px;
+  min-height: 32px;
+  text-align: center;
+  padding: 3px 4px;
+}
+
+.date-box-group .date-year {
+  width: 92px;
+}
+
+.date-box-group .date-month {
+  width: 76px;
+}
+
+.date-box-group .date-day {
+  width: 64px;
+}
+
+.referral-dates-panel .required-star {
+  color: #333;
+  margin-left: 3px;
+}
+
+
+/* CR Referral / Booking no-overlap layout refinement */
+#referral-intake .section-title,
+#referral-intake .referral-note {
+  max-width: 1500px;
+}
+
+#referral-intake .cr-referral-simple-layout {
+  display: grid;
+  grid-template-columns: minmax(560px, 640px) minmax(520px, 720px);
+  column-gap: 44px;
+  row-gap: 14px;
+  align-items: start;
+  max-width: 1500px;
+}
+
+#referral-intake .referral-dates-panel,
+#referral-intake .physicians-simple-panel,
+#referral-intake .clinician-type-panel {
+  grid-column: 1;
+  width: 100%;
+  min-width: 0;
+}
+
+#referral-intake .point-referral-panel {
+  grid-column: 2;
+  grid-row: 1 / span 3;
+  width: 100%;
+  min-width: 0;
+}
+
+#referral-intake .referral-date-table {
+  grid-template-columns: 190px 316px;
+  gap: 6px 10px;
+  width: 516px;
+  max-width: 100%;
+}
+
+#referral-intake .date-headings,
+#referral-intake .date-box-group {
+  display: grid;
+  grid-template-columns: 118px 96px 78px;
+  gap: 10px;
+  width: max-content;
+}
+
+#referral-intake .date-box-group input {
+  box-sizing: border-box;
+  height: 32px;
+  min-height: 32px;
+  text-align: center;
+}
+
+#referral-intake .date-box-group .date-year {
+  width: 118px;
+}
+
+#referral-intake .date-box-group .date-month {
+  width: 96px;
+}
+
+#referral-intake .date-box-group .date-day {
+  width: 78px;
+}
+
+#referral-intake .referral-choice-stack {
+  max-height: none;
+  overflow: visible;
+}
+
+@media (max-width: 1180px) {
+  #referral-intake .cr-referral-simple-layout {
+    grid-template-columns: 1fr;
+  }
+
+  #referral-intake .point-referral-panel,
+  #referral-intake .referral-dates-panel,
+  #referral-intake .physicians-simple-panel,
+  #referral-intake .clinician-type-panel {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}
+
+
+/* Final sidebar order and blank tab screens */
+.sidebar {
+  width: 230px;
+  min-width: 230px;
+}
+
+.nav-item {
+  white-space: normal;
+  line-height: 1.15;
+  min-height: 34px;
+}
+
+.blank-screen {
+  max-width: 1340px;
+  min-height: 520px;
+  border: 1px solid var(--border);
+  background: white;
+}
+
+
+/* Sex, Gender, and Identity-Related Communication refinements */
+.pronoun-grid {
+  grid-template-columns: repeat(2, minmax(230px, 1fr));
+}
+
+.pronoun-other-option {
+  background: #f8f8f8;
+}
+
+.pronoun-other-row {
+  margin-top: 8px;
+}
+
+.identity-notes-panel {
+  max-width: 1320px;
+}
+
+.identity-notes-row > label:first-child {
+  min-height: 78px;
+}
+
+.identity-textarea {
+  width: 820px !important;
+  min-height: 86px;
+}
+
+
+/* Race, Ethnicity, and Indigenous Identity data collection statement */
+.data-collection-statement {
+  max-width: 1320px;
+  margin: 0 0 12px;
+  padding: 10px 14px;
+  border: 1px solid #7f8b8f;
+  background: #eef6f6;
+  color: #111;
+  line-height: 1.45;
+}
+
+
+/* Streamlined care-related action fields */
+.streamlined-action-panel {
+  max-width: 1320px;
+  padding-bottom: 12px;
+  margin-bottom: 14px;
+}
+
+.action-form-row {
+  display: grid;
+  grid-template-columns: 285px minmax(0, 1fr);
+  gap: 8px;
+  align-items: stretch;
+  margin: 8px 0;
+}
+
+.action-form-row > label {
+  background: var(--teal-light);
+  min-height: 64px;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.streamlined-action-textarea {
+  width: min(820px, 100%) !important;
+  min-height: 72px;
+}
+
+
+/* Charter-aligned field behaviour and visual cues */
+.conditional-field[hidden] {
+  display: none !important;
+}
+
+.conditional-hint {
+  max-width: 1030px;
+  margin: 7px 0 8px;
+  padding: 7px 10px;
+  border: 1px solid #aebfc1;
+  background: #f4f9f9;
+  color: #354b4e;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.auto-populated-field {
+  background: #f0f0f0 !important;
+  color: #555;
+  cursor: default;
+}
+
+.multi-select-control {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  max-width: 690px;
+}
+
+.multi-select-control .wide-input {
+  width: min(570px, 100%) !important;
+}
+
+.add-selection-button,
+.remove-selection-button {
+  border: 1px solid #8c989c;
+  background: #e9eeee;
+  color: #172729;
+  cursor: pointer;
+  font: inherit;
+}
+
+.add-selection-button {
+  min-height: 28px;
+  padding: 4px 10px;
+}
+
+.selected-values {
+  display: flex;
+  flex-basis: 100%;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.selected-value-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid #8eb4b5;
+  background: #e9f4f4;
+  padding: 3px 5px 3px 7px;
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+.remove-selection-button {
+  width: 18px;
+  height: 18px;
+  min-height: 18px;
+  padding: 0;
+  border-radius: 50%;
+  line-height: 14px;
+}
+
+.work-return-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
